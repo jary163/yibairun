@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray4"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tv_help"
+        style="@style/Setting_System"
+        android:text="@string/setting_help" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/gray12" />
+
+    <TextView
+        android:id="@+id/tv_push_setting"
+        style="@style/Setting_System"
+        android:text="@string/setting_push" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/gray12" />
+
+    <RelativeLayout
+        android:id="@+id/rl_version_check"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:descendantFocusability="beforeDescendants"
+        android:background="@color/gray4" >
+
+        <TextView
+            android:id="@+id/tv_version_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="25dp"
+            android:paddingBottom="25dp"
+            android:text="@string/setting_version_check"
+            android:textColor="@color/black3"
+            android:textSize="17sp" />
+
+        <ImageView
+            android:id="@+id/iv_setting_new"
+            android:layout_width="50dp"
+            android:layout_height="23dp"
+            android:layout_alignTop="@id/tv_version_check"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="-8dp"
+            android:visibility="gone"
+            android:layout_toRightOf="@id/tv_version_check"
+            android:background="@drawable/ic_setting_new" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/gray12" />
+
+    <TextView
+        android:id="@+id/tv_about_yibairun"
+        style="@style/Setting_System"
+        android:text="@string/setting_about" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/gray12" />
+
+    <TextView
+        android:id="@+id/tv_loginout"
+        style="@style/ProductDetailYieldText"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_edit_red"
+        android:gravity="center"
+        android:paddingBottom="3dp"
+        android:paddingTop="3dp"
+        android:text="@string/login_out" />
+
+</LinearLayout>

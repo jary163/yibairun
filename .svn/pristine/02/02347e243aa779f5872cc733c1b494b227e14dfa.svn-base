@@ -1,0 +1,129 @@
+package com.yibairun.ui.activity;
+
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.umeng.update.UmengUpdateAgent;
+import com.umeng.update.UmengUpdateListener;
+import com.umeng.update.UpdateResponse;
+import com.umeng.update.UpdateStatus;
+import com.yibairun.R;
+import com.yibairun.comm.Constant;
+
+public class SettingActivity extends BaseActivity {
+
+	private TextView tv_loginout;
+	private ImageView iv_setting_new;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		setContentView(R.layout.activity_setting);
+		super.onCreate(savedInstanceState);
+
+
+	}
+
+	@Override
+	public void initView() {
+		tv_loginout = findView(R.id.tv_loginout);
+		iv_setting_new = findView(R.id.iv_setting_new);
+	}
+
+	@Override
+	public void initDate() {
+        bar.setDisplayHomeAsUpEnabled(true);
+        bar.setTitle(context.getResources().getString(R.string.action_settings));	
+		if(!TextUtils.isEmpty(appController.getAppKey())){
+			tv_loginout.setVisibility(View.VISIBLE);
+		}else{
+			tv_loginout.setVisibility(View.GONE);
+		}
+		findView(R.id.tv_push_setting).setVisibility(View.GONE);
+	}
+
+	@Override
+	public void initListener() {
+		findView(R.id.tv_help).setOnClickListener(this);
+		//findView(R.id.tv_push_setting).setOnClickListener(this);
+		findView(R.id.tv_about_yibairun).setOnClickListener(this);
+		findView(R.id.rl_version_check).setOnClickListener(this);
+		findView(R.id.tv_loginout).setOnClickListener(this);
+	}
+
+	@Override
+	public void onClick(View v) {
+		super.onClick(v);
+		switch (v.getId()) {
+		case R.id.tv_help:
+			//startActivity(SettingHelpActivity.class);
+			jumpToWebView(Constant.ACTIVITY_HELP);
+			break;
+		case R.id.tv_push_setting:
+			startActivity(SettingPushActivity.class);
+			break;
+		case R.id.tv_about_yibairun:
+			startActivity(SettingAboutActivity.class);
+			break;
+		case R.id.rl_version_check:
+			pg.setMessage("正在检测新版本，请稍后...");
+        	pg.show();
+			UmengUpdateAgent.setUpdateListener(new UmengUpdateListener() {
+				
+				@Override
+				public void onUpdateReturned(int arg0, UpdateResponse updateInfo) {
+					pg.dismiss();
+					switch (arg0) {
+					case UpdateStatus.Yes://已经是最新的版本
+						 UmengUpdateAgent.showUpdateDialog(SettingActivity.this, updateInfo);
+						 //UmengUpdateAgent.forceUpdate(SettingActivity.this);
+						break;
+					case UpdateStatus.No: // has no update
+			            Toast.makeText(SettingActivity.this, "您的版本是最新的!", Toast.LENGTH_SHORT).show();
+                        break;
+					case UpdateStatus.Timeout: // time out
+			            Toast.makeText(SettingActivity.this, "连接超时", Toast.LENGTH_SHORT).show();
+                        break;
+					default:
+						break;
+					}
+				}
+			});
+			UmengUpdateAgent.update(this);
+			break;
+		case R.id.tv_loginout:
+			Toast.makeText(context, "退出成功	", Toast.LENGTH_SHORT).show();
+			appController.setNull();
+			startActivity(MainActivity.class);
+		default:
+			break;
+		}
+	}
+
+	/**
+	 * 获取当前版本号
+	 * @return
+	 * @throws Exception
+	 */
+	private String getVersionName() {
+		// 获取packagemanager的实例
+		PackageManager packageManager = getPackageManager();
+		// getPackageName()是你当前类的包名，0代表是获取版本信息
+		PackageInfo packInfo;
+		String version = null;
+		try {
+			packInfo = packageManager.getPackageInfo(getPackageName(),0);
+			version = packInfo.versionName;
+		} catch (NameNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return version;
+	}
+}

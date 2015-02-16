@@ -1,0 +1,91 @@
+package com.yibairun.ui.activity;
+
+import android.content.ClipboardManager;
+import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.igexin.sdk.PushManager;
+import com.yibairun.R;
+import com.yibairun.comm.Constant;
+
+public class SettingAboutActivity extends BaseActivity {
+
+	private TextView tv_loginout,versionCode;
+	private ImageView iv_logo;
+	private long[]  hideFunction;
+	private long limitTime = 5000;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		setContentView(R.layout.activity_about);
+		super.onCreate(savedInstanceState);
+		iv_logo = findView(R.id.iv_logo);
+        versionCode = findView(R.id.versionCode);
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		hideFunction = new long[10];
+	}
+
+	@Override
+	public void initView() {
+		tv_loginout = findView(R.id.tv_loginout);
+		iv_logo = findView(R.id.iv_logo);
+	}
+
+	@Override
+	public void initDate() {
+        bar.setDisplayHomeAsUpEnabled(true);
+        bar.setTitle(context.getResources().getString(R.string.setting_about));	
+
+	}
+
+	@Override
+	public void initListener() {
+		iv_logo.setOnClickListener(this);
+        versionCode.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return false;
+            }
+        });
+        versionCode.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                String Clientid = PushManager.getInstance().getClientid(context);
+                if(!TextUtils.isEmpty(Clientid))
+                    versionCode.setText(Clientid);
+                ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+                clipboard.setText(versionCode.getText());
+                return true;
+            }
+        });
+
+	}
+
+	@Override
+	public void onClick(View v) {
+		super.onClick(v);
+		switch (v.getId()) {
+
+		case R.id.iv_logo:
+				hideFunction[0] = System.currentTimeMillis();
+				Log.e("main", "0:"+hideFunction[0]+"  9:"+hideFunction[9]);
+				if((hideFunction[0]-hideFunction[9])<limitTime){//5s中点击10次，则调整到webview
+					jumpToWebView(Constant.ACTIVITY_SETTING_ABOUT);
+				}else{
+					System.arraycopy(hideFunction, 0, hideFunction, 1,9);
+				}
+			break;
+		default:
+			break;
+		}
+	}
+}

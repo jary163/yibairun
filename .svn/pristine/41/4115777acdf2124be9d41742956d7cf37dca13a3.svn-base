@@ -1,0 +1,95 @@
+package com.yibairun.adapter;
+
+import java.util.List;
+
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.yibairun.R;
+import com.yibairun.bean.Message;
+import com.yibairun.bean.Product;
+import com.yibairun.comm.Constant;
+import com.yibairun.utils.DateUtil;
+
+public class MsgAdapter extends BaseAdapter {
+	private Context context;
+	private ProductHolder myHolder;
+	private List<Message> messageList;
+	private int type;//当前消息类型
+
+	public MsgAdapter() {
+	}
+
+	public MsgAdapter(Context context,List<Message> messageList,int type) {
+		this.context = context;
+		this.messageList = messageList;
+		this.type = type;
+	}
+
+	@Override
+	public int getCount() {
+		return messageList.size();
+	}
+
+	@Override
+	public Object getItem(int position) {
+		return messageList.get(position);
+	}
+
+	@Override
+	public long getItemId(int position) {
+		return position;
+	}
+
+	@Override
+	public View getView(int position, View convertView, ViewGroup parent) {
+		Message message = messageList.get(position);
+		if (convertView == null) {
+			myHolder = new ProductHolder();
+			convertView = View.inflate(context, R.layout.list_item_msg,null);
+			myHolder.iv_head_line = (ImageView) convertView.findViewById(R.id.iv_head_line);
+			myHolder.tv_time = (TextView) convertView.findViewById(R.id.tv_time);
+			myHolder.tv_info = (TextView) convertView.findViewById(R.id.tv_info);
+			myHolder.ll_pic = (LinearLayout) convertView.findViewById(R.id.ll_pic);
+			convertView.setTag(myHolder);
+		} else {
+			myHolder = (ProductHolder) convertView.getTag();
+		}
+		if(position==0){
+			myHolder.iv_head_line.setVisibility(View.GONE);
+		}else{
+			myHolder.iv_head_line.setVisibility(View.VISIBLE);
+		}
+		myHolder.tv_time.setText(DateUtil.getSpecialTime(message.getCreatetime()));
+		switch (type) {
+		case Constant.FRAGMENT_PERSONAL:
+			myHolder.tv_info.setText(message.getContent());
+			break;
+		default:
+			myHolder.tv_info.setText(message.getTitle());
+			break;
+		}
+		return convertView;
+	}
+
+
+	class ProductHolder {
+		TextView tv_info, tv_time;
+		ImageView iv_head_line;
+		LinearLayout ll_pic;
+	}
+
+
+	public void addData(List<Message> messageList) {
+		// TODO Auto-generated method stub
+		   this.messageList.addAll(messageList);
+	        notifyDataSetChanged();
+	}
+	 
+
+}

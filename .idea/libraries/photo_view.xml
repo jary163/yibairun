@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="photo_view">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/yibairun/libs/photo_view.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

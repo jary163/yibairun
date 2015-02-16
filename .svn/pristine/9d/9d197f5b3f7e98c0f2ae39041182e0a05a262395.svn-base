@@ -1,0 +1,67 @@
+package com.yibairun.ui.activity;
+
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences.Editor;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.os.SystemClock;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.util.AttributeSet;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import com.android.volley.Response.ErrorListener;
+import com.android.volley.Response.Listener;
+import com.yibairun.R;
+import com.yibairun.bean.UserInfo;
+import com.yibairun.comm.Constant;
+import com.yibairun.utils.UiUtil;
+
+public class MyBanksOptionActivity extends BaseActivity implements View.OnClickListener {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		setContentView(R.layout.activity_my_bank_option);
+		super.onCreate(savedInstanceState);
+
+	}
+
+	@Override
+	public void initView() {
+
+	}
+
+	@Override
+	public void initDate() {
+		bar.setDisplayHomeAsUpEnabled(true);
+        bar.setTitle(context.getResources().getString(R.string.action_bank_cards));
+
+	}
+
+	@Override
+	public void initListener() {
+		findView(R.id.tv_payment_default).setOnClickListener(this);
+		findView(R.id.tv_remove_binding).setOnClickListener(this);
+
+	}
+
+	@Override
+	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.tv_payment_default:
+			UiUtil.getDefaultToast(context, "已经默认使用该卡支付！").show();
+			break;
+		case R.id.tv_remove_binding:
+			Intent intent = new Intent();
+			startActivity(RemoveBankActivity.class, intent);
+			break;
+		default:
+			break;
+		}
+	}
+
+}

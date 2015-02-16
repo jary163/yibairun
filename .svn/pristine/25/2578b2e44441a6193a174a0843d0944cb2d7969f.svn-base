@@ -1,0 +1,160 @@
+package com.yibairun.application;
+
+import java.io.File;
+import java.util.LinkedList;
+import java.util.List;
+
+import android.app.Activity;
+import android.app.Application;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.graphics.Bitmap.CompressFormat;
+import android.os.Environment;
+import android.text.TextUtils;
+
+import com.umeng.analytics.MobclickAgent;
+import com.yibairun.api.operations.YibaiRunApi;
+import com.yibairun.api.templates.YiBaiRunTemplates;
+import com.yibairun.bean.UserInfo;
+import com.yibairun.comm.Constant;
+import com.yibairun.exception.DefaultExceptionHandler;
+import com.yibairun.manager.ImageCacheManager;
+import com.yibairun.manager.ImageCacheManager.CacheType;
+import com.yibairun.manager.RequestManager;
+
+
+public class AppController extends Application {
+	
+	private static int DISK_IMAGECACHE_SIZE = 1024*1024*10;
+	private static CompressFormat DISK_IMAGECACHE_COMPRESS_FORMAT = CompressFormat.PNG;
+	private static int DISK_IMAGECACHE_QUALITY = 100;  //PNG is lossless so quality is ignored but must be provided
+    private static AppController mInstance;
+    private YibaiRunApi api;
+    private UserInfo userinfo;
+    private String appKey;
+    private String savePath = null;
+    private String idCardSavePath = null;
+	
+	public String getUserHeadSavePath() {
+		if(TextUtils.isEmpty(savePath)){
+			//savePath = this.getFilesDir().getAbsolutePath()+"/head/"+userinfo.getUser().getMobile();
+			savePath = Environment.getExternalStorageDirectory().getAbsolutePath()+"/yibairun/head/"+userinfo.getUser().getMobile();
+			if(!new File(savePath).exists())
+				new File(savePath).mkdirs();
+		}
+		return savePath+"/"+Constant.PIC_HEAD;
+	}
+	
+	
+
+	public String getIdCardSavePath() {
+		if(TextUtils.isEmpty(idCardSavePath)){
+			idCardSavePath = Environment.getExternalStorageDirectory().getAbsolutePath()+"/yibairun/head/"+userinfo.getUser().getMobile();
+			if(!new File(idCardSavePath).exists())
+				new File(idCardSavePath).mkdirs();
+		}
+		return idCardSavePath+"/"+Constant.PIC_IDCARD;
+	}
+
+
+
+	public String getAppKey() {
+		return appKey;
+	}
+
+	public void setAppKey(String appKey) {
+		this.appKey = appKey;
+	}
+
+	public UserInfo getUserinfo() {
+		return userinfo;
+	}
+
+	public void setUserinfo(UserInfo userinfo) {
+		this.userinfo = userinfo;
+	}
+
+	public YibaiRunApi getApi() {
+        return api;
+    }
+
+    public static synchronized AppController getInstance() {
+        return mInstance;
+    }
+
+    @Override
+	public void onCreate() {
+		// TODO Auto-generated method stub
+		super.onCreate();
+        mInstance = this;
+        api = new YiBaiRunTemplates(this);
+		init();
+	}
+	/**
+	 * Intialize the request manager and the image cache 
+	 */
+	private void init() {
+		RequestManager.init(this);
+		createImageCache();
+		Thread.setDefaultUncaughtExceptionHandler(new DefaultExceptionHandler(getApplicationContext()));
+		MobclickAgent.updateOnlineConfig(this);//初始化umeng在线参数
+	}
+	
+	private List<Activity> activityList = new LinkedList<Activity>();
+
+	// 添加Activity到容器中
+	public void addActivity(Activity activity) {
+		activityList.add(activity);
+	}
+	
+	/**
+	 * Create the image cache. Uses Memory Cache by default. Change to Disk for a Disk based LRU implementation.  
+	 */
+	private void createImageCache(){
+		ImageCacheManager.getInstance().init(this,
+				this.getPackageCodePath()
+				, DISK_IMAGECACHE_SIZE
+				, DISK_IMAGECACHE_COMPRESS_FORMAT
+				, DISK_IMAGECACHE_QUALITY
+				, CacheType.MEMORY);
+	}
+	
+	// 遍历所有Activity并finish
+	public void exit() {
+		for (Activity activity : activityList) {
+			activity.finish();
+		}
+		setNull();
+	}
+
+	/**
+	 * 将参数置空
+	 */
+	public void setNull(){
+		appKey = null;//TODO 为什么程序退出之后还存在？？？
+		userinfo = null;
+		savePath = null;
+	}
+	
+	/**
+	 * 获取当前系统版本号
+	 * @return
+	 * @throws Exception
+	 */
+	 public String getVersionName() 
+	   {
+		String version = "1";
+		try {
+			// 获取packagemanager的实例
+			PackageManager packageManager = getPackageManager();
+			// getPackageName()是你当前类的包名，0代表是获取版本信息
+			PackageInfo packInfo;
+			packInfo = packageManager.getPackageInfo(getPackageName(),0);
+			version = String.valueOf(packInfo.versionName);
+		} catch (NameNotFoundException e) {
+			e.printStackTrace();
+		}
+           return version;
+	   }
+}

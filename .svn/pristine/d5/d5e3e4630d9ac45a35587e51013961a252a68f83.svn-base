@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray4"
+    android:orientation="vertical"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingTop="5dp" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_edit_balck"
+        android:gravity="center_vertical" >
+
+        <EditText
+            android:id="@+id/et_username"
+            style="@style/edit_style"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/background_edittext_selector"
+            android:hint="@string/certification_name"
+            android:inputType="text"
+            android:maxLines="1" >
+        </EditText>
+
+        <ImageView
+            android:layout_width="11dp"
+            android:layout_height="11dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/ic_clear"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_edit_balck"
+        android:gravity="center_vertical" >
+
+        <EditText
+            android:id="@+id/et_idcard"
+            style="@style/edit_style"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="text"
+            android:background="@drawable/background_edittext_selector"
+            android:hint="@string/certification_idcard"
+            android:maxLines="1">
+        </EditText>
+
+        <ImageView
+            android:layout_width="11dp"
+            android:layout_height="11dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/ic_clear"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp" >
+
+        <ImageView
+            android:id="@+id/iv_talk_pic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/bg_tack_pic" />
+
+        <ImageView
+            android:id="@+id/iv_idcard_marked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/iv_talk_pic"
+            android:src="@drawable/background_idcard_marked_selector" />
+
+        <RelativeLayout
+            android:id="@+id/rl_border_upload_idcard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/iv_talk_pic"
+            android:background="@drawable/bg_after_tack_pic"
+            android:padding="8dp"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/tv_upload_idcard"
+                style="@style/BankUserNameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/certification_upLoad_idcard"
+                android:visibility="gone" />
+
+            <ImageView
+                android:layout_centerInParent="true"
+                android:id="@+id/iv_display_idcard"
+                android:layout_width="140dp"
+                android:layout_height="80dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_enter"
+        style="@style/ProductDetailYieldText"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/sel_regiest_next"
+        android:enabled="false"
+        android:gravity="center"
+        android:paddingBottom="3dp"
+        android:paddingTop="3dp"
+        android:text="@string/enter"
+        android:textColor="@color/gray7" />
+
+</LinearLayout>

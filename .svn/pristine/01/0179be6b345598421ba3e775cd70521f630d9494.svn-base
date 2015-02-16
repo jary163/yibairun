@@ -1,0 +1,89 @@
+package com.yibairun.ui.activity;
+
+import android.os.Bundle;
+import android.view.KeyEvent;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+
+import com.yibairun.R;
+import com.yibairun.comm.Constant;
+import com.yibairun.utils.SYSharedPreferences;
+
+import org.apache.http.util.EncodingUtils;
+
+public class WebViewActivity extends BaseActivity {
+
+	private WebView webView;
+	private int type;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		setContentView(R.layout.activity_webview);
+		type = getIntent().getIntExtra(Constant.ACTIVITY_TYPE, -1);
+		super.onCreate(savedInstanceState);
+	}
+
+	@Override
+	public void initView() {
+		webView = findView(R.id.web_view);
+		webView.getSettings().setJavaScriptEnabled(true);
+		webView.getSettings().setBuiltInZoomControls(true);
+		webView.getSettings().setUseWideViewPort(true);
+		webView.getSettings().setLoadWithOverviewMode(true);
+		webView.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
+	}
+
+	@Override
+	public void initDate() {
+		bar.setDisplayHomeAsUpEnabled(true);
+		bar.setTitle("亿百润");
+		switch (type) {
+		case Constant.ACTIVITY_SETTING_ABOUT:
+//			if(null!=appController.getUserinfo()){
+//				User user =appController.getUserinfo().getUser();
+//post访问需要提交的参数
+				String postDate = "mobile="+  SYSharedPreferences.getInstance().getString("mobile","")+"password="+  SYSharedPreferences.getInstance().getString("password","");
+//由于webView.postUrl(url, postData)中 postData类型为byte[] ，
+//通过EncodingUtils.getBytes(data, charset)方法进行转换
+				
+				webView.postUrl(Constant.AD_WEBVIEW, EncodingUtils.getBytes(postDate, "BASE64"));
+//        webView.loadUrl(Constant.AD_WEBVIEW);
+//			}else{
+//				webView.loadUrl(Constant.AD_WEBVIEW);
+//			}
+			break;
+		case Constant.ACTIVITY_HELP :
+			webView.loadUrl(Constant.WEBVIEW_HELPER_URL);
+			break;
+		case Constant.WEBVIEW_PROTOCOL :
+			webView.loadUrl(Constant.WEBVIEW_PROTOCOL_URL);
+			break;
+		case Constant.WEBVIEW_DISCLAIMER:
+			webView.loadUrl(Constant.WEBVIEW_DISCLAIMER_URL);
+			break;
+		default:
+			break;
+		}
+
+	}
+
+	@Override
+	public void initListener() {
+		webView.setWebViewClient(new WebViewClient(){
+			@Override
+			public boolean shouldOverrideUrlLoading(WebView view, String url) {
+				view.loadUrl(url);
+				return true;
+			}
+		});
+	}
+
+	public boolean onKeyDown(int keyCoder, KeyEvent event) {
+		if (webView.canGoBack() && keyCoder == KeyEvent.KEYCODE_BACK) {
+			webView.goBack(); // goBack()表示返回webView的上一页面
+			return true;
+		}
+		 return super.onKeyDown(keyCoder, event);
+	}
+
+}

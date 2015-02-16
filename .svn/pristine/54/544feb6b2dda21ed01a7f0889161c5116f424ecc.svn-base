@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="7dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp" >
+
+            <TextView
+                style="@style/NorMalBlackText_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/explain_pay_method" />
+
+            <TextView
+                style="@style/NorMalGreyText_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/explain_pay" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/NorMalBlackText_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="7dp"
+            android:layout_marginLeft="10dp"
+            android:text="@string/explain_control_risk" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="8dp" >
+
+            <TextView
+                style="@style/ProductDetailSmailYieldText"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:background="@drawable/bg_nums"
+                android:gravity="center"
+                android:text="1" />
+
+            <TextView
+                style="@style/NorMalGreyText_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:text="@string/explain_control_risk_info1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="3dp" >
+
+            <TextView
+                style="@style/ProductDetailSmailYieldText"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:background="@drawable/bg_nums"
+                android:gravity="center"
+                android:text="2" />
+
+            <TextView
+                style="@style/NorMalGreyText_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:text="@string/explain_control_risk_info2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="3dp" >
+
+            <TextView
+                style="@style/ProductDetailSmailYieldText"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:background="@drawable/bg_nums"
+                android:gravity="center"
+                android:text="3" />
+
+            <TextView
+                style="@style/NorMalGreyText_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:text="@string/explain_control_risk_info3" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="3dp" >
+
+            <TextView
+                style="@style/ProductDetailSmailYieldText"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:background="@drawable/bg_nums"
+                android:gravity="center"
+                android:text="4" />
+
+            <TextView
+                style="@style/NorMalGreyText_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:text="@string/explain_control_risk_info4" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

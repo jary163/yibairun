@@ -1,0 +1,96 @@
+package com.yibairun.utils;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import android.content.Context;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+
+import com.yibairun.R;
+import com.yibairun.bean.Rate;
+import com.yibairun.ui.components.NumberView;
+
+public class ProductUtils {
+
+	/**
+	 * imageview
+	 * 
+	 * @param context
+	 * @param c
+	 * @return
+	 */
+	public static ImageView getImageView(Context context, char c) {
+
+		NumberView imageView = new NumberView(context);
+
+		switch (c) {
+		case '0':
+			imageView.setBackgroundResource(R.drawable.product_number_0);
+			break;
+		case '1':
+			imageView.setBackgroundResource(R.drawable.product_number_1);
+			break;
+		case '2':
+			imageView.setBackgroundResource(R.drawable.product_number_2);
+			break;
+		case '3':
+			imageView.setBackgroundResource(R.drawable.product_number_3);
+			break;
+		case '4':
+			imageView.setBackgroundResource(R.drawable.product_number_4);
+			break;
+		case '5':
+			imageView.setBackgroundResource(R.drawable.product_number_5);
+			break;
+		case '6':
+			imageView.setBackgroundResource(R.drawable.product_number_6);
+			break;
+		case '7':
+			imageView.setBackgroundResource(R.drawable.product_number_7);
+			break;
+		case '8':
+			imageView.setBackgroundResource(R.drawable.product_number_8);
+			break;
+		case '9':
+			imageView.setBackgroundResource(R.drawable.product_number_9);
+			break;
+		case '.':
+			imageView.setBackgroundResource(R.drawable.product_number_point);
+			break;
+		case '_':
+			imageView
+					.setBackgroundResource(R.drawable.product_number_underline);
+			break;
+		default:
+			imageView = null;
+			break;
+		}
+		return imageView;
+	}
+
+	/**
+	 * 总进度为1000， 将进度格式化
+	 * 
+	 * @param progress
+	 * @return
+	 */
+	public static int getFormatProgress(int progress) {
+		return 360 * progress / 1000;
+	}
+	
+	/**
+	 * 通过投资金额来获取换算比率
+	 * @param rate_range   换算比率
+	 * @param money		   投资金额
+	 * @return
+	 */
+	public static Rate getRateFromMoney(List<Rate> rate_range,int money){
+		for (Rate rate : rate_range) {
+			if(money<rate.getMax())
+			return rate;
+		}
+		return null;
+	}
+}

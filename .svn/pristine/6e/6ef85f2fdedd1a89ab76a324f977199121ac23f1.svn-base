@@ -1,0 +1,208 @@
+package com.yibairun.api.templates;
+
+
+import android.content.Context;
+import android.net.Uri;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.Response.ErrorListener;
+import com.android.volley.Response.Listener;
+import com.yibairun.api.operations.AbstractOperations;
+import com.yibairun.api.operations.ProductOperations;
+import com.yibairun.api.request.GsonRequest;
+import com.yibairun.bean.OrderlInfo;
+import com.yibairun.bean.ProductDetailInfo;
+import com.yibairun.bean.ProductInvestList;
+import com.yibairun.bean.ProductList;
+import com.yibairun.bean.StatusMessage;
+import com.yibairun.bean.UserInfo;
+import com.yibairun.bean.VersionInfo;
+import com.yibairun.manager.RequestManager;
+import com.yibairun.utils.Lg;
+import com.yibairun.utils.UrlConfig;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class ProductTemplates extends AbstractOperations implements ProductOperations {
+
+
+
+    public ProductTemplates(Context ctx) {
+        super(ctx);
+    }
+
+    @Override
+    public void setToken(String token) {
+
+    }
+
+    @Override
+    public void setDeviceId(String deviceId) {
+        super.setDeviceId(deviceId);
+    }
+
+    @Override
+    public void getProductList(Response.Listener<ProductList> listener, Response.ErrorListener errorListener, int page) {
+
+        Uri.Builder uriBuilder = Uri.parse(UrlConfig.PRODUCT_PRODUCT_LIST).buildUpon()
+                .appendQueryParameter("page", String.valueOf(page));
+
+
+        String uri = uriBuilder.build().toString();
+
+        GsonRequest<ProductList> request = new GsonRequest<ProductList>(Request.Method.GET
+                , uri
+                , ProductList.class
+                , listener
+                , errorListener);
+
+        lg.i(request.toString());
+        RequestManager.addToRequestQueue(request);
+    }
+    @Override
+    public void getInvestingList(Response.Listener<ProductInvestList> listener, Response.ErrorListener errorListener,String appkey, int page) {
+
+        Uri.Builder uriBuilder = Uri.parse(UrlConfig.INVESTING_PRDUCT).buildUpon()
+        		.appendQueryParameter("appkey", String.valueOf(appkey))
+                .appendQueryParameter("page", String.valueOf(page));
+
+
+        String uri = uriBuilder.build().toString();
+
+        GsonRequest<ProductInvestList> request = new GsonRequest<ProductInvestList>(Request.Method.GET
+                , uri
+                , ProductInvestList.class
+                , listener
+                , errorListener);
+
+        lg.i(request.toString());
+        RequestManager.addToRequestQueue(request);
+    }
+    @Override
+    public void getOverInvestMentList(Response.Listener<ProductInvestList> listener, Response.ErrorListener errorListener,String appkey, int page) {
+
+        Uri.Builder uriBuilder = Uri.parse(UrlConfig.OVER_INVESTMENT_PRDUCT).buildUpon()
+        		.appendQueryParameter("appkey", String.valueOf(appkey))
+                .appendQueryParameter("page", String.valueOf(page));
+
+
+        String uri = uriBuilder.build().toString();
+
+        GsonRequest<ProductInvestList> request = new GsonRequest<ProductInvestList>(Request.Method.GET
+                , uri
+                , ProductInvestList.class
+                , listener
+                , errorListener);
+
+        lg.i(request.toString());
+        RequestManager.addToRequestQueue(request);
+    }
+
+    @Override
+    public void getProductDetail(Response.Listener<ProductDetailInfo> listener, Response.ErrorListener errorListener, int id) {
+        Uri.Builder uriBuilder = Uri.parse(UrlConfig.PRODUCT_DETAIL).buildUpon()
+                .appendQueryParameter("id", String.valueOf(id));
+
+
+        String uri = uriBuilder.build().toString();
+
+        GsonRequest<ProductDetailInfo> request = new GsonRequest<ProductDetailInfo>(Request.Method.GET
+                , uri
+                , ProductDetailInfo.class
+                , listener
+                , errorListener);
+
+        lg.i(request.toString());
+        RequestManager.addToRequestQueue(request);
+    }
+
+    @Override
+    public void getOrderId(Response.Listener<OrderlInfo> listener, Response.ErrorListener errorListener,String appkey, double money) {
+        Uri.Builder uriBuilder = Uri.parse(UrlConfig.CREATE_ORDERID).buildUpon()
+                .appendQueryParameter("appkey", String.valueOf(appkey))
+                .appendQueryParameter("money", String.valueOf(money));
+
+
+        String uri = uriBuilder.build().toString();
+
+        GsonRequest request = new GsonRequest(Request.Method.GET
+                , uri
+                , OrderlInfo.class
+                , listener
+                , errorListener);
+
+        lg.i(request.toString());
+        RequestManager.addToRequestQueue(request);
+    }
+    @Override
+    public void buyPorduct(Response.Listener<StatusMessage> listener, Response.ErrorListener errorListener,String appkey, double money,int pid,String paypassword) {
+        Uri.Builder uriBuilder = Uri.parse(UrlConfig.BUY).buildUpon();
+        HashMap<String,String> mParams = new HashMap<String, String>();
+        mParams.put("appkey", String.valueOf(appkey));
+        mParams.put("pid", String.valueOf(pid));
+        mParams.put("paypassword", paypassword);
+        mParams.put("money", String.valueOf(money));
+
+        String uri = uriBuilder.build().toString();
+
+        GsonRequest request = new GsonRequest(Request.Method.POST
+                , uri
+                , StatusMessage.class
+                , listener
+                , errorListener,mParams);
+
+        lg.i(request.toString());
+        RequestManager.addToRequestQueue(request);
+    }
+    @Override
+    public void getCash(Response.Listener<StatusMessage> listener, Response.ErrorListener errorListener, final String appkey, final double money, final int bank_id, final String paypassword) {
+        Uri.Builder uriBuilder = Uri.parse(UrlConfig.GET_CASH).buildUpon();
+        HashMap mParams = new HashMap<String, String>();
+        mParams.put("appkey",  String.valueOf(appkey));
+        mParams.put("bank_id",  String.valueOf(bank_id));
+        mParams.put("paypassword", paypassword);
+        mParams.put("money", String.valueOf(money));
+
+        String uri = uriBuilder.build().toString();
+
+        GsonRequest request = new GsonRequest(Request.Method.POST
+                , uri
+                , StatusMessage.class
+                , listener
+                , errorListener,mParams);
+
+        lg.i(request.toString());
+        RequestManager.addToRequestQueue(request);
+    }
+
+	@Override
+	public void getVersion(Listener<VersionInfo> listener,
+			ErrorListener errorListener) {
+		Uri.Builder uriBuilder = Uri.parse(UrlConfig.VERSION_UPDATE)
+				.buildUpon();
+		String uri = uriBuilder.build().toString();
+		GsonRequest request = new GsonRequest(Request.Method.POST, uri,
+				VersionInfo.class, listener, errorListener);
+
+		lg.i(request.toString());
+		RequestManager.addToRequestQueue(request);
+	}
+
+	@Override
+	public void GetInviteCode(Listener<StatusMessage> listener,
+			ErrorListener errorListener,String appkey) {
+        Uri.Builder uriBuilder = Uri.parse(UrlConfig.INVITE_CODE).buildUpon()
+        		.appendQueryParameter("appkey", String.valueOf(appkey));
+		String uri = uriBuilder.build().toString();
+		GsonRequest request = new GsonRequest(Request.Method.GET, uri,
+				VersionInfo.class, listener, errorListener);
+
+		lg.i(request.toString());
+		RequestManager.addToRequestQueue(request);
+		
+	}
+
+}

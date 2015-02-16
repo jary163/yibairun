@@ -1,0 +1,71 @@
+package com.yibairun.ui.activity;
+
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.yibairun.R;
+
+public class SettingAboutActivity extends BaseActivity {
+
+	private TextView tv_loginout;
+	private ImageView iv_logo;
+	private long[]  hideFunction;
+	private long limitTime = 5000;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		setContentView(R.layout.activity_about);
+		super.onCreate(savedInstanceState);
+		iv_logo = findView(R.id.iv_logo);
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		hideFunction = new long[10];
+	}
+
+	@Override
+	public void initView() {
+		tv_loginout = findView(R.id.tv_loginout);
+		iv_logo = findView(R.id.iv_logo);
+	}
+
+	@Override
+	public void initDate() {
+        bar.setDisplayHomeAsUpEnabled(true);
+        bar.setTitle(context.getResources().getString(R.string.setting_about));	
+
+	}
+
+	@Override
+	public void initListener() {
+		iv_logo.setOnClickListener(this);
+	}
+
+	@Override
+	public void onClick(View v) {
+		super.onClick(v);
+		switch (v.getId()) {
+		case R.id.iv_logo:
+				hideFunction[0] = System.currentTimeMillis();
+				Log.e("main", "0:"+hideFunction[0]+"  9:"+hideFunction[9]);
+				if((hideFunction[0]-hideFunction[9])<limitTime){//5s中点击10次，则调整到webview
+					jumpToWebView();
+				}else{
+					System.arraycopy(hideFunction, 0, hideFunction, 1,9);
+				}
+			break;
+		default:
+			break;
+		}
+	}
+
+	public void jumpToWebView(){
+		startActivity(WebViewActivity.class);
+	}
+}

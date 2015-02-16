@@ -1,0 +1,164 @@
+package com.yibairun.bean;
+
+import java.math.BigDecimal;
+
+/**
+ * Created by Administrator on 2014/7/26.
+ * mailto:wzyax@qq.com
+ */
+public class User {
+    private String username;
+    private String password;
+    private String appkey;
+    private String img;
+    private String mobile;
+    private String realname;
+    private float bonusmoney;//累计收益
+    private float investmoney;//正在投资金额
+    private float rebatemoney;//累计好友返利
+    private int fritotal;//推荐好友数
+    private float userinvest;//预期收益
+    private BigDecimal money;//帐户余额
+    private String cardnum;//身份证号码
+    private String is_paypwd;//是否第一次支付
+    private int is_first_cash;//是否第一次取现
+    private String code;//邀请码
+    private boolean isUploadIdCard;
+    
+
+    public String getRealname() {
+		return realname;
+	}
+
+	public void setRealname(String realname) {
+		this.realname = realname;
+	}
+
+    public boolean isUploadIdCard() {
+        return isUploadIdCard;
+    }
+
+    public void setUploadIdCard(boolean isUploadIdCard) {
+        this.isUploadIdCard = isUploadIdCard;
+    }
+
+    public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getIs_paypwd() {
+		return is_paypwd;
+	}
+
+	public void setIs_paypwd(String is_paypwd) {
+		this.is_paypwd = is_paypwd;
+	}
+
+	public int getIs_first_cash() {
+		return is_first_cash;
+	}
+
+	public void setIs_first_cash(int is_first_cash) {
+		this.is_first_cash = is_first_cash;
+	}
+
+	public String getCardnum() {
+		return cardnum;
+	}
+
+	public void setCardnum(String cardnum) {
+		this.cardnum = cardnum;
+	}
+
+	public String getAppkey() {
+        return appkey;
+    }
+
+    public void setAppkey(String appkey) {
+        this.appkey = appkey;
+    }
+
+    public BigDecimal getMoney() {
+        return money;
+    }
+
+    public void setMoney(BigDecimal money) {
+        this.money = money;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+
+    public float getBonusmoney() {
+        return bonusmoney;
+    }
+
+    public void setBonusmoney(float bonusmoney) {
+        this.bonusmoney = bonusmoney;
+    }
+
+    public float getInvestmoney() {
+        return investmoney;
+    }
+
+    public void setInvestmoney(float investmoney) {
+        this.investmoney = investmoney;
+    }
+
+    public float getRebatemoney() {
+        return rebatemoney;
+    }
+
+    public void setRebatemoney(float rebatemoney) {
+        this.rebatemoney = rebatemoney;
+    }
+
+    public int getFritotal() {
+        return fritotal;
+    }
+
+    public void setFritotal(int fritotal) {
+        this.fritotal = fritotal;
+    }
+
+    public float getUserinvest() {
+        return userinvest;
+    }
+
+    public void setUserinvest(float userinvest) {
+        this.userinvest = userinvest;
+    }
+}

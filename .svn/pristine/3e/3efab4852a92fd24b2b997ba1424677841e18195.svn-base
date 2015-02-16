@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">亿百润</string>
+    <string name="title_section1">产品</string>
+    <string name="title_section2">个人</string>
+    <string name="title_section3">消息</string>
+    <string name="title_section4">推荐</string>
+    <string name="action_settings">   设置</string>
+    <string name="action_account_manager">   账户管理</string>
+    <string name="action_bank_cards">   我的银行卡</string>
+    <string name="action_setting_password">   设置交易密码</string>
+    <string name="action_login">登录</string>
+    <string name="action_cancel">取消</string>
+
+    <!-- share -->
+    <string name="code_share">我正在亿百润投资理财，赚到了,点击http://www.100run.com/app.html?key=</string><!-- 有邀请码分享 -->
+    <string name="not_code_share">我正在亿百润投资理财，赚到了,点击http://www.100run.com/app.html</string><!-- 无邀请码分享 -->
+    <!-- title -->
+        <string name="title_msg_detail">详情</string>
+    <string name="title_product_detail">产品详情</string>
+        <string name="title_product_info">产品说明</string>
+    <string name="title_apply_purchase">申请购买</string>
+
+    <!-- 网络提示 -->
+    <string name="generic_server_down">请求超时</string>
+    <string name="login_time_out">登录超时！</string>
+    <string name="no_internet">网络错误</string>
+    <string name="generic_error">内部错误</string>
+    <!-- 用户操作提示 -->
+    <string name="product_investment__ended">产品投资已结束</string>
+    <string name="product_investmenting">兑付期中</string>
+
+    <!-- 产品说明 -->
+    <string name="explain_pay_method">付息方式：</string>
+    <string name="explain_pay">到期付息</string>
+    <string name="explain_control_risk">风险控制：</string>
+    <string name="explain_control_risk_info1">青州城投以青州市植物园云门山周边共计266.666平米的土地设定抵押担保。该地块经知名评估机构深圳市世联土地房地产评估有限公司评估价值约为5亿元，抵押率不高于40%。</string>
+    <string name="explain_control_risk_info2">青州市财政局为本资管计划出具承诺函，保证优先安排资金，以市政府财政收入及土地收入优先支付委贷本息。</string>
+    <string name="explain_control_risk_info3">青州市人大常委会出具人大决议，将青州城投应偿还的委贷本息列入还款本年度财政预算。</string>
+    <string name="explain_control_risk_info4">第一还款来源：青州城投日常经营收入。青州城投通过土地整理开发业务，包括土地平整、清理以及地面房屋拆迁等工作获得稳定的土地出让收益，确保该项目融资按期还本利息，按期还本利息。按期还本息青州城投通过土地整理开发业务青州城。</string>
+    <string name="msg_first">重磅出击，余量有限！起步收益10.6%，1年期恒仁银行股权项目，半年付息100万起。政府背景，多家上市公司实际控制人连带责任担保！详询官网。【亿百润】</string>
+
+    <!-- 帮助 -->
+    <string name="help_question1">我的姓名中有符号或者是英文是否可以认证？</string>
+    <string name="help_answer1"> \u3000\u3000目前对于身份信息的要求是在公安系统登记而且可查询到的。对于姓名中出现的符号，请使用英文半角格式输入。</string>
+    <string name="help_question2">为什么网上银行充值成功，但是亿百润账号里面的余额却没有增加？</string>
+    <string name="help_answer2">\u3000\u3000由于在同一时间使用同一第三方充值账户端口充值的人可能非常多，在某些时候会造成网银显示与亿百润账号金额不同步的情况。如果遇到这种情况请您将网银付款成功的页面截图，然后刷新亿百润账户页面。如果刷新未能解决问题，请您联系亿百润客服，客服专员会知道发送截图并马上处理您的问题。</string>
+    <string name="help_question3">如何提出现金？</string>
+    <string name="help_answer3">\u3000\u3000登陆进入“我的账户-提现”，您可以随时将您在亿百润账号中的可用金额申请提现到您现有的任何一家银行的账号上。</string>
+
+    <!-- 登录 -->
+    <string name="login_nunber">请输入您的手机号</string>
+    <string name="login_password">请输入登录密码</string>
+    <string name="login">登录</string>
+    <string name="login_out">退出登录</string>
+
+    <!-- 注册 -->
+    <string name="regiest">注册</string>
+    <string name="regiest_password_limit">6-12个英文字母、数字或符号组成，区分大小写</string>
+    <string name="regiest_agree">已阅读并同意</string>
+    <string name="regiest_protocol">使用协议和隐私政策</string>
+
+    <!-- 验证码 -->
+    <string name="authcode">验证码</string>
+    <string name="authcode_send">已向{0}发送短信验证码,请注意系统将自动输入验证码！</string>
+    <string name="authcode_get_authcode">获取验证码</string>
+    <string name="authcode_get_again">300秒后重新获取</string>
+
+    <!-- 修改交易密码 -->
+    <string name="input_current_password">输入当前交易密码</string>
+    <string name="input_new_password">输入新的交易密码</string>
+    <string name="input_password_warn">必须与登录密码不一致！</string>
+    <string name="input_new_password_again">再次输入新的交易密码</string>
+
+    <!-- 通用 -->
+    <string name="ybr_next">下一步</string>
+    <string name="ybr_enter">确认提交</string>
+    <string name="ybr_subit">提交</string>
+    <string name="ybr_money">金额</string>
+
+    <!-- 购买 -->
+    <string name="buys_apply">申请购买</string>
+    <string name="enter">确定</string>
+    <string name="buys_enter">确认购买</string>
+    <string name="buys_success_tow">购买成功</string>
+    <string name="buys_success">恭喜您，购买成功</string>
+    <string name="buys_input_password">输入交易密码</string>
+    <string name="buys_input_password_again">再次输入交易密码</string>
+    <string name="buys_rate_return">预期收益率</string>
+    <string name="buys_money">起购金额</string>
+    <string name="purchase_money">购买金额：</string>
+    <string name="buys_limits">期限</string>
+    <string name="buys_plan">青岛喜来乐国际家居博贷款集合资金计划</string>
+    <string name="buys_protocol_one">亿百润投资合作协议</string>
+    <string name="buys_protocol_two">风险披露声明及免责声明</string>
+    
+    
+    <!-- 个人 -->
+    <string name="certification_name">请输入真实姓名</string>
+    <string name="certification_idcard">请输入身份证号</string>
+    <string name="certification_upLoad_idcard">上传身份证</string>
+    <string name="certification_unUpLoad">未上传</string>
+    <string name="certification">实名认证</string>
+
+    <!-- 个人 -->
+    <string name="person_balance">账户余额</string>
+    <string name="person_income">预期收益</string>
+    <string name="person_current_income">当前收益</string>
+    <string name="person_year_income">年化收益</string>
+    <string name="person_invest">正在投资</string>
+    <string name="person_add_income">累计收益</string>
+    <string name="person_recommend_friend">已推荐好友</string>
+    <string name="person_invest_money">累计返利金额</string>
+
+    <!-- 摄像头 -->
+    <string name="camera_upload_pic">上传照片</string>
+    <string name="camera_phone_pic">手机拍照</string>
+    <string name="camera_dcim">手机相册</string>
+
+    <!-- 账户管理 -->
+    <string name="account_modify_password">修改交易密码</string>
+    <string name="account_found_password">找回交易密码</string>
+    <string name="account_withdraw">提现</string>
+    <string name="account_uploadidcard">实名认证</string>
+    <string name="account_manger">账户管理</string>
+
+    <!-- 提现 -->
+    <string name="withdraw_account_balance">账户余额：</string>
+    <string name="withdraw_money">提现金额：</string>
+    <string name="withdraw_name">真实姓名：</string>
+    <string name="withdraw_money_input">请输入提现金额</string>
+    <string name="withdraw_trade_money">请输入交易密码</string>
+    <string name="withdraw_identify_card">身份证号：</string>
+    <string name="withdraw_select_bank_card">选银行卡：</string>
+    <string name="withdraw_select_bank_cards">选择银行卡</string>
+    <string name="withdraw_trade_password">交易密码：</string>
+
+    <!-- 充值 -->
+    <string name="recharge">充值</string>
+    <string name="recharge_money">充值金额：</string>
+    <string name="recharge_money_input">请输入充值金额</string>
+
+    <!-- 银行类型 -->
+    <string name="bank_card_type">卡类型：</string>
+    <string name="bank_city">城市：</string>
+    <string name="bank_card_nums">卡号：</string>
+    <string name="bank_subbranch">支行：</string>
+    <string name="bank_nonghang">中国农业银行</string>
+    <string name="bank_saving_cards">储蓄卡</string>
+
+    <!-- 银行卡 -->
+    <string name="select_bank_types">银行卡类</string>
+    <string name="select_city">城市</string>
+    <string name="select_bank_numbs">银行卡号</string>
+    <string name="add_bank">添加银行卡</string>
+    <string name="add_bank_input_password">请输入交易密码以添加新的银行卡</string>
+    <string name="mybank_trad_pasword">为保证资金安全请设置交易密码！</string>
+    <string name="mybank_trad_pasword_again">6-12位数字字母组成，字母区分大小写，必须与登录密码不一致！</string>
+    <string name="bank_nums">卡号</string>
+    <string name="bank_input_nums">请输入银行卡卡号</string>
+    <string name="bank_input_people">持卡人</string>
+    <string name="bank_band_person_info">请绑定持卡人本人的银行卡</string>
+    <string name="bank_band_type">请选择银行卡类型</string>
+    <string name="card_type">卡类型</string>
+    <string name="bank_reserved_info">请填写银行预留信息</string>
+    <string name="bank_reserved_nums_info">请填写银行预留手机号</string>
+    <string name="bank_reserved_phone">手机号</string>
+    <string name="bank_user_default">默认使用该卡支付</string>
+    <string name="bank_remove_binding">解除绑定</string>
+    <string name="bank_remove_binding_info">请输入交易密码以验证身份。解绑后， 可重新绑定</string>
+    <string name="bank_cards_owner">持卡人</string>
+
+    <!-- 银行 -->
+    <string name="bankname_china_nonghang">中国农业银行</string>
+    <string name="bankname_china_gongshang">中国工商银行</string>
+
+    <!-- 推荐 -->
+    <string name="recommend_barcode">二维码推荐</string>
+    <string name="recommend_apply">应用推荐</string>
+    <string name="recommend_msg">短信推荐</string>
+    <string name="recommend_tenxun_weibo">腾讯微博</string>
+    <string name="recommend_weixin">微信</string>
+    <string name="recommend_weixin_circle">微信朋友圈</string>
+    <string name="recommend_sina_weibo">新浪微博</string>
+    <string name="recommend_zone">QQ空间</string>
+    <string name="recommend_Info">你知道吗！100元起投年化收益最低8%！证监会监管，上市公司联保的高端理财项目！注册有惊喜：http://t.cn/8FB2XpP</string>
+
+    <!-- 设置 -->
+    <string name="setting_help">帮助</string>
+    <string name="setting_version_check">版本检测</string>
+    <string name="setting_about">关于亿百润</string>
+    <string name="setting_push">推送设置</string>
+    <string name="setting_push_morning">上午10点</string>
+    <string name="setting_push_afternoon">下午4点</string>
+    <string name="setting_push_evening">晚上8点</string>
+    <!-- 关于 -->
+    <string name="about_version">亿百润android 版本号：{0}</string>
+    <string name="about_number">企业电话：010-51799538</string>
+    <string name="about_website">亿百润官网：</string>
+    <string name="about_website_info">www.100run.com</string>
+    <string name="about_authority">Copyright © 2011-2014 100run Corporation</string>
+    <string name="title_activity_recharge">RechargeActivity</string>
+    <string name="hello_world">Hello world!</string>
+
+    <!-- 快钱支付 -->
+    <string name="order_num_null">订单号码为空 ！</string>
+    <string name="order_amt_null">订单金额为空 ！</string>
+    <string name="order_merchant_null">商户名称为空 ！</string>
+    <string name="order_product_null">商品名称为空 ！</string>
+    <string name="order_partner_null">用户标识为空 ！</string>
+    <string name="sure">确   定</string>
+    <string name="error_info_title">错误提示</string>
+    
+    <!-- 友盟 -->
+    <string name="umeng_key">540d1c1ffd98c5727c08184c</string>
+        <string name="market">yibairun</string>
+
+    <!-- 系统 -->
+    <string name="exit_app">再按一次退出应用</string>
+
+</resources>

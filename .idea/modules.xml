@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/MPChartLib/MPChartLib.iml" filepath="$PROJECT_DIR$/MPChartLib/MPChartLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RefreshLibrary/RefreshLibrary.iml" filepath="$PROJECT_DIR$/RefreshLibrary/RefreshLibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/umeng/umeng.iml" filepath="$PROJECT_DIR$/umeng/umeng.iml" />
+      <module fileurl="file://$PROJECT_DIR$/volley/volley.iml" filepath="$PROJECT_DIR$/volley/volley.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yibairun.iml" filepath="$PROJECT_DIR$/yibairun.iml" />
+      <module fileurl="file://$PROJECT_DIR$/yibairun/yibairun-yibairun.iml" filepath="$PROJECT_DIR$/yibairun/yibairun-yibairun.iml" />
+    </modules>
+  </component>
+</project>
+

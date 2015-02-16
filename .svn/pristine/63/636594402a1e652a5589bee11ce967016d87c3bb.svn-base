@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--if you want to modify holo theme, you should modify PrivateThemeHoloLightOnlyForInherit style instead of AppTheme_Light style-->
+   <style name="StyledIndicators" parent="@android:style/Theme.Light">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+
+</resources>

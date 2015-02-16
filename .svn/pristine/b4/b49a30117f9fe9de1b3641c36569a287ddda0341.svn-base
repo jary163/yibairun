@@ -1,0 +1,65 @@
+package com.yibairun.adapter;
+
+import android.content.Context;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.yibairun.R;
+import com.yibairun.bean.Message;
+import com.yibairun.comm.Constant;
+import com.yibairun.utils.DateUtil;
+import com.yibairun.utils.StringUtil;
+
+import java.util.List;
+
+public class MsgAdapter extends SimpleBaseAdapter {
+	private Context context;
+	private List<Message> messageList;
+	private int type;//当前消息类型
+
+
+
+	public MsgAdapter(Context context,List<Message> messageList) {
+        super(context, messageList);
+	}
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
+    @Override
+    public int getItemResource() {
+        return R.layout.list_item_msg;
+    }
+
+    @Override
+    public View getItemView(int position, View convertView, ViewHolder holder) {
+        Message message = (Message) getItem(position);
+        ImageView iv_head_line = (ImageView) holder.getView(R.id.iv_head_line);
+        ImageView iv_lock = (ImageView) holder.getView(R.id.iv_lock);
+        TextView tv_time = (TextView) holder.getView(R.id.tv_time);
+        TextView tv_info = (TextView) holder.getView(R.id.tv_info);
+
+        if(position==0){
+            iv_head_line.setVisibility(View.GONE);
+        }else{
+            iv_head_line.setVisibility(View.VISIBLE);
+        }
+        switch (type) {
+            case Constant.FRAGMENT_PERSONAL:
+                tv_info.setText(StringUtil.ToDBC(message.getContent()));
+                tv_time.setText("");
+                iv_lock.setBackgroundResource(R.drawable.bg_person_msg_head);
+                break;
+            default:
+            	tv_time.setText(StringUtil.ToDBC(DateUtil.getSpecialTime(message.getCreatetime()*1000)));
+                tv_info.setText(message.getTitle());
+                iv_lock.setBackgroundResource(R.drawable.logo_red);
+                break;
+        }
+
+        return convertView;
+    }
+
+}

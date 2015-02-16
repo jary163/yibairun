@@ -1,0 +1,185 @@
+package com.yibairun.ui.fragment;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.Response.ErrorListener;
+import com.android.volley.Response.Listener;
+import com.android.volley.VolleyError;
+import com.umeng.analytics.MobclickAgent;
+import com.umeng.socialize.bean.SHARE_MEDIA;
+import com.umeng.socialize.controller.UMSocialService;
+import com.umeng.socialize.sso.UMSsoHandler;
+import com.yibairun.R;
+import com.yibairun.bean.InvitationCode;
+import com.yibairun.bean.User;
+import com.yibairun.comm.Constant;
+import com.yibairun.core.ShareFactory;
+import com.yibairun.listener.RecommendCallBackListener;
+import com.yibairun.ui.components.RecommendDialog;
+import com.yibairun.utils.VolleyErrorHelper;
+
+public class RecommendFragment extends BaseFragment implements RecommendCallBackListener{
+    private static final String ARG_SECTION_NUMBER = "section_number";
+    private View rootView;
+    private TextView textView;
+    private UMSocialService mController;
+    private String shareMessage ;
+    private String shareCode;
+	private String share_append_url_composite_unlogin ;//(未获取邀请码)分享url链接
+	private String share_append_url_composite_login ;//（已获取邀请码）分享url链接
+
+
+
+    public static RecommendFragment newInstance(int sectionNumber) {
+        RecommendFragment fragment = new RecommendFragment();
+        Bundle args = new Bundle();
+        args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    public RecommendFragment() {
+
+    }
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        rootView = inflater.inflate(R.layout.fragment_recommend, container, false);
+        rootView.findViewById(R.id.iv_recommend_circle).setOnClickListener(this);
+        rootView.findViewById(R.id.iv_recommend_msg).setOnClickListener(this);
+        rootView.findViewById(R.id.iv_recommend_quickmark).setOnClickListener(this);
+        rootView.findViewById(R.id.iv_recommend_qzone).setOnClickListener(this);
+        rootView.findViewById(R.id.iv_recommend_sina).setOnClickListener(this);
+        rootView.findViewById(R.id.iv_recommend_tenxun_weibo).setOnClickListener(this);
+        rootView.findViewById(R.id.iv_recommend_weixing).setOnClickListener(this);
+    	initShareUrl();
+        return rootView;
+    }
+
+	private void initShareUrl() {
+		String notCodeUrl = MobclickAgent.getConfigParams( getActivity(), "notCodeUrl" );//未获取邀请码的url
+		String codeUrl = MobclickAgent.getConfigParams( getActivity(), "codeUrl" );//获取到邀请码的url
+    	if(!TextUtils.isEmpty(notCodeUrl)){//未获取到邀请码的url
+    		share_append_url_composite_unlogin = notCodeUrl;
+    	}else{
+    		share_append_url_composite_unlogin = getString(R.string.not_code_share);
+    	}
+    	if(!TextUtils.isEmpty(codeUrl)){//获取到邀请码的url
+    		share_append_url_composite_login = codeUrl;
+    	}else{
+    		share_append_url_composite_login = getString(R.string.code_share);
+    	}
+	}
+
+    @Override
+    public void onClick(View v) {
+        super.onClick(v);
+        switch (v.getId()) {
+            case R.id.iv_recommend_circle:
+    			share(SHARE_MEDIA.WEIXIN_CIRCLE);
+                //mController = ShareFactory.getInstance().shareToFriend(getActivity(),shareMessage, "", shareMessage+"message");
+                break;
+            case R.id.iv_recommend_msg:
+            	share(SHARE_MEDIA.SMS);
+                break;
+            case R.id.iv_recommend_quickmark:
+                break;
+            case R.id.iv_recommend_qzone:
+    			share(SHARE_MEDIA.QZONE);
+                break;
+            case R.id.iv_recommend_sina:
+    			share(SHARE_MEDIA.SINA);
+				break;
+            case R.id.iv_recommend_tenxun_weibo:
+    			share(SHARE_MEDIA.TENCENT);
+                break;
+            case R.id.iv_recommend_weixing:
+    			share(SHARE_MEDIA.WEIXIN);
+                break;
+            default:
+                break;
+        }
+        
+
+    }
+    
+    private void share(SHARE_MEDIA type){
+        if(TextUtils.isEmpty(appController.getAppKey())||null==appController.getUserinfo()){//未登录分享
+			shareMessage = share_append_url_composite_unlogin;
+        	//shareToPlatForm(type);
+        }else{//登录分享
+        	User user= appController.getUserinfo().getUser();
+        	if(TextUtils.isEmpty(user.getCode())){//判断是否存在邀请码
+        		shareMessage = share_append_url_composite_unlogin;
+        	}else{
+        		shareMessage = share_append_url_composite_login+user.getCode();
+        		shareCode = user.getCode();
+        	}
+        }
+        jumpToDialog(type);
+    }
+    
+    public void jumpToDialog(SHARE_MEDIA type){
+    	RecommendDialog calculateDialog;
+    	Window window ;
+    	WindowManager.LayoutParams lp;
+		calculateDialog = new RecommendDialog(getActivity(),R.style.CalculateDialog,type,shareMessage,this);
+		window = calculateDialog.getWindow();     
+		lp = window.getAttributes();     
+		lp.alpha = 0.8f;     
+		window.setAttributes(lp);  
+		calculateDialog.show();
+    }
+    
+    public void shareToPlatForm(SHARE_MEDIA type){
+    	String shareUrl;
+    	switch (type) {
+		case SINA:
+			mController = ShareFactory.getInstance().shareToSinaWeiBo(getActivity(), shareMessage);
+			break;
+		case TENCENT:
+			mController = ShareFactory.getInstance().shareToTenXunWeiBo(getActivity(), shareMessage);
+			break;
+		case QZONE:
+			mController = ShareFactory.getInstance().shareToQZone(getActivity(),shareMessage,null);
+			break;
+		case WEIXIN:
+			if(TextUtils.isEmpty(shareCode)){
+				shareUrl = share_append_url_composite_unlogin;
+			}else{
+				shareUrl = share_append_url_composite_login+shareCode;
+			}
+			mController = ShareFactory.getInstance().shareToWeiXin(getActivity(), shareMessage, Constant.SHARE_TITLE, shareUrl);
+			break;
+		case WEIXIN_CIRCLE:
+			if(TextUtils.isEmpty(shareCode)){
+				shareUrl = share_append_url_composite_unlogin;
+			}else{
+				shareUrl = share_append_url_composite_login+shareCode;
+			}
+			mController = ShareFactory.getInstance().shareToFriend(getActivity(),shareMessage, Constant.SHARE_TITLE, shareUrl);
+			break;
+		case SMS:
+			ShareFactory.getInstance().shareToSms(getActivity(), shareMessage);
+		default:
+			break;
+		}
+    }
+	@Override
+	public void onRecommendMsgEnter(String message,SHARE_MEDIA type) {
+		shareMessage = message;
+		if(TextUtils.isEmpty(message)){
+			shareMessage = share_append_url_composite_unlogin;
+		}
+		shareToPlatForm(type);
+	}
+
+}

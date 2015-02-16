@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/gray15"
+    android:padding="10dp" >
+
+    <LinearLayout
+        android:id="@+id/ll_my_cards"
+        android:layout_width="fill_parent"
+        android:layout_height="110dp"
+        android:background="@drawable/bg_mybank"
+        android:orientation="vertical"
+        android:padding="15dp" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:id="@+id/iv_logo"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@drawable/logo_nongye" />
+
+            <TextView
+                android:id="@+id/tv_bank"
+                style="@style/BankNameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/iv_logo"
+                android:text="@string/bankname_china_gongshang" />
+
+            <TextView
+                android:id="@+id/tv_bank"
+                style="@style/NumberText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="@string/bank_saving_cards" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/bank_card_nums"
+            style="@style/bank_card_nums"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="**** **** ****  0324" />
+    </LinearLayout>
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tv_add_bank"
+        style="@style/BankAddInfo"
+        android:layout_width="fill_parent"
+        android:layout_height="110dp"
+        android:background="@drawable/bg_add_bank"
+        android:gravity="center">
+    </TextView>
+
+</RelativeLayout>
