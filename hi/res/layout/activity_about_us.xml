@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_chatlist"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/title_layout"
+        layout="@layout/activity_title" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/logoff"
+            style="@style/about_us_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/weibo" />
+
+        <TextView
+            style="@style/about_us_des"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/weibo_des" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/logoff"
+            android:background="@color/chat_send_msg" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/otherSex"
+            style="@style/about_us_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/qqgroup" />
+
+        <TextView
+            style="@style/about_us_des"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/qqgroup_des" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/otherSex"
+            android:background="@color/chat_send_msg" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/video_setting"
+            style="@style/about_us_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/website" />
+
+        <TextView
+            style="@style/about_us_des"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/website_des" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/video_setting"
+            android:background="@color/chat_send_msg" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/push_setting"
+            style="@style/about_us_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:text="@string/weixing" />
+
+        <TextView
+            style="@style/about_us_des"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/weixing_des" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/push_setting"
+            android:background="@color/chat_send_msg" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:obd="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray4" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:gravity="center" >
+
+            <RelativeLayout
+                android:id="@+id/rl_circle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/red5"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp" >
+
+                <com.yibairun.ui.components.WaterViewGroupEx
+                    android:id="@+id/vg_waterView"
+                    android:layout_width="170dp"
+                    android:layout_height="170dp"
+                    android:layout_marginLeft="40dp"
+                    obd:background_color="#00000000"
+                    android:layout_centerHorizontal="true"
+                    obd:src="@drawable/icon_drive_analyse_circle"
+                    obd:stroke_width="11"
+                    obd:type_draw="arc" >
+
+                    <LinearLayout
+                        android:id="@+id/ll_year_income"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="invisible" >
+
+                        <TextView
+                            android:id="@+id/tv_year_income"
+                            style="@style/bank_card_nums"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="8.52-10.36%" />
+
+                        <TextView
+                            style="@style/ProductDetailYieldText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="年化收益" />
+                    </LinearLayout>
+                </com.yibairun.ui.components.WaterViewGroupEx>
+
+                <LinearLayout
+                    android:id="@+id/ll_bank_rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="-2dp"
+                    android:layout_toRightOf="@id/vg_waterView"
+                    android:orientation="vertical"
+                    android:paddingTop="35dp"
+                    android:visibility="invisible" >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/product_detail_yield_one" />
+
+                    <TextView
+                        style="@style/ProductDetailSmailYieldText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="银行活期" />
+
+                    <TextView
+                        android:id="@+id/tv_bank_rate"
+                        style="@style/ProductDetailSmailYieldText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="0.35%"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_balance_rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/vg_waterView"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="-5dp"
+                    android:visibility="invisible" >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="60dp"
+                        android:background="@drawable/product_detail_yield_two" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            style="@style/ProductDetailSmailYieldText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="当天余额宝" />
+
+                        <TextView
+                            android:id="@+id/tv_balance_rate"
+                            style="@style/ProductDetailSmailYieldText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="5.3730%"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_calculate"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:padding="10dp" >
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/product_detail_yield_count" />
+
+                <EditText
+                    android:id="@+id/et_chat_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/product_detail_yield_three"
+                    android:focusable="false"
+                    android:inputType="textMultiLine"
+                    android:maxLines="3"
+                    android:minLines="1"
+                    android:padding="5dp" />
+
+                <TextView
+                    style="@style/ProductDetailInfoStyleTwo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="算一算" />
+            </LinearLayout>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/cv_graph"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <LinearLayout
+                android:id="@+id/ll_enter"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/red4"
+                android:gravity="center"
+                android:padding="10dp" >
+
+                <ImageView
+                    android:id="@+id/iv_product_buys"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/set_product_btn" />
+            </LinearLayout>
+        </LinearLayout>
+
+    <include
+        android:id="@+id/pending_view"
+        layout="@layout/pending"
+        android:visibility="gone" />
+
+</RelativeLayout>

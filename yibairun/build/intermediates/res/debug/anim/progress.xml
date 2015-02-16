@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<rotate xmlns:android="http://schemas.android.com/apk/res/android" >  
+    <rotate xmlns:android="http://schemas.android.com/apk/res/android"       
+    android:drawable="@drawable/pd_loading"  
+    android:pivotX="50%"       
+    android:pivotY="50%" />  
+  
+</rotate><!-- From: file:/Users/cherish/Documents/yibairun/yibairun/res/anim/progress.xml -->

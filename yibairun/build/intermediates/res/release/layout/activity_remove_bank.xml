@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray4"
+    android:orientation="vertical"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingTop="5dp" >
+
+    <TextView
+        style="@style/NorMalBigBlackText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/bank_remove_binding_info" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_edit_balck"
+        android:gravity="center_vertical" >
+
+        <EditText
+            android:id="@+id/et_trade_password"
+            style="@style/edit_password_style"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/login_password"
+            android:maxLines="1" >
+        </EditText>
+    </LinearLayout>
+
+</LinearLayout><!-- From: file:/Users/cherish/Documents/yibairun/yibairun/res/layout/activity_remove_bank.xml -->

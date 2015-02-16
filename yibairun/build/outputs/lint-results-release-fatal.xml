@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="4" by="lint 24.0.2">
+
+    <issue
+        id="PackagedPrivateKey"
+        severity="Fatal"
+        message="The `assets/81231007277000890.pem` file seems to be a private key file. Please make sure not to embed this in your APK file."
+        category="Security"
+        priority="8"
+        summary="Packaged private key"
+        explanation="In general, you should not package private key files inside your app.">
+        <location
+            file="/Users/cherish/Documents/yibairun/yibairun/assets/81231007277000890.pem"/>
+    </issue>
+
+    <issue
+        id="PackagedPrivateKey"
+        severity="Fatal"
+        message="The `assets/PrivateKey_Produce.pem` file seems to be a private key file. Please make sure not to embed this in your APK file."
+        category="Security"
+        priority="8"
+        summary="Packaged private key"
+        explanation="In general, you should not package private key files inside your app.">
+        <location
+            file="/Users/cherish/Documents/yibairun/yibairun/assets/PrivateKey_Produce.pem"/>
+    </issue>
+
+    <issue
+        id="PackagedPrivateKey"
+        severity="Fatal"
+        message="The `assets/PrivateKey_jckf.pem` file seems to be a private key file. Please make sure not to embed this in your APK file."
+        category="Security"
+        priority="8"
+        summary="Packaged private key"
+        explanation="In general, you should not package private key files inside your app.">
+        <location
+            file="/Users/cherish/Documents/yibairun/yibairun/assets/PrivateKey_jckf.pem"/>
+    </issue>
+
+</issues>

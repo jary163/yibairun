@@ -1,0 +1,29 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.yibairun.MainActivity" >
+
+    <item
+        android:id="@+id/action_login"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="@string/action_login"/>
+    <item
+        android:id="@+id/action_account_manager"
+        android:orderInCategory="101"
+        android:showAsAction="never"
+        android:icon="@drawable/pp_account_manger"
+        android:title="@string/action_account_manager"/>
+    <item
+        android:id="@+id/action_bank_cards"
+        android:orderInCategory="101"
+        android:showAsAction="never"
+        android:icon="@drawable/pp_bank_card"
+        android:title="@string/action_bank_cards"/>
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="101"
+        android:showAsAction="never"
+        android:icon="@drawable/pp_setting"
+        android:title="@string/action_settings"/>
+
+</menu>

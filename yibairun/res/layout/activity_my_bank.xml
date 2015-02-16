@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray15"
+    android:orientation="vertical" >
+
+    <ListView
+        android:id="@+id/lv_my_bank"
+        android:divider="@null"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+    </ListView>
+    <include
+        android:id="@+id/pending_view"
+        layout="@layout/pending"
+        android:visibility="gone" />
+</RelativeLayout>

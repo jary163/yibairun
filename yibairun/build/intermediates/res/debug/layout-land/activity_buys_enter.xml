@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_edit_balck"
+        android:orientation="vertical"
+        android:padding="13dp" >
+
+        <TextView
+            android:id="@+id/tv_play_info"
+            style="@style/NorMalBlackText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/buys_plan" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/gray8" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp" >
+
+            <TextView
+                style="@style/NorMalGreyText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/purchase_money" />
+
+            <TextView
+                android:id="@+id/tv_income_money"
+                style="@style/ProductDetailInfoStyleThree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="10000" />
+
+            <TextView
+                style="@style/ProductDetailInfoStyleThreeUnit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="元" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp" >
+
+            <TextView
+                style="@style/NorMalGreyText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="预期收益：" />
+
+            <TextView
+                android:id="@+id/tv_expect_yield"
+                style="@style/ProductDetailInfoStyleThree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="11" />
+
+            <TextView
+                style="@style/ProductDetailInfoStyleThreeUnit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="%" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp" >
+
+            <TextView
+                style="@style/NorMalGreyText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="        期限：" />
+
+            <TextView
+                android:id="@+id/tv_limit_day"
+                style="@style/ProductDetailInfoStyleThree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="365" />
+
+            <TextView
+                style="@style/ProductDetailInfoStyleThreeUnit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="天" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray4"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="5dp" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_edit_balck"
+            android:gravity="center_vertical" >
+
+            <EditText
+                android:id="@+id/et_enter_password"
+                style="@style/edit_password_style"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/buys_input_password"
+                android:maxLines="1" >
+            </EditText>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_next"
+            style="@style/RegiestNextText"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/sel_regiest_next"
+            android:gravity="center"
+            android:paddingBottom="3dp"
+            android:paddingTop="3dp"
+            android:text="@string/buys_enter" />
+    </LinearLayout>
+
+</LinearLayout><!-- From: file:/Users/cherish/Documents/yibairun/yibairun/res/layout-land/activity_buys_enter.xml -->

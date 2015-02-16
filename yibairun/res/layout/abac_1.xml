@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray4" >
+
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="fill_parent"
+		android:layout_marginLeft="100dp"
+		android:layout_marginRight="100dp"
+        android:layout_height="160dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/ic_setting_about" />
+
+    <TextView
+        style="@style/SettingAboutText"
+        android:id="@+id/versionCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="@string/about_version" />
+
+    <TextView
+        android:id="@+id/tv_authority"
+        style="@style/AuthorityText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:maxLines="1"
+        android:text="@string/about_authority" />
+
+    <LinearLayout
+        android:id="@+id/ll_website"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/tv_authority"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            style="@style/SettingAboutText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/about_website" />
+
+        <TextView
+            style="@style/AboutWebsite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/about_website_info" />
+    </LinearLayout>
+
+    <TextView
+        style="@style/SettingAboutText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/ll_website"
+        android:layout_centerHorizontal="true"
+        android:text="@string/about_number" />
+
+</RelativeLayout>
+
+
+<!--
+    <?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:orientation="vertical" android:layout_width="fill_parent"
+android:layout_height="fill_parent" android:background="@color/section_bgcolor">
+&lt;!&ndash; 顶栏 &ndash;&gt;
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="43dp"
+    android:padding="5dp"
+    android:background="@drawable/topbar_bg"
+    android:orientation="horizontal"
+    android:gravity="center" >
+    <Button style="@style/AliBt" mce_style="@style/AliBt"
+        android:id="@+id/btLeft"
+        android:text="Left" />
+    <Spinner android:id="@+id/sp_HY"
+        android:visibility="invisible"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
+    <TextView style="@style/AliBarTitle" mce_style="@style/AliBarTitle"
+        android:id="@+id/txBarTitle1"
+        android:text="" />
+    <Button style="@style/AliBt" mce_style="@style/AliBt"
+        android:id="@+id/btRight"
+        android:text="Right" />
+</LinearLayout>
+&lt;!&ndash; 主内容框架 &ndash;&gt;
+<LinearLayout
+    android:id="@+id/llContent1"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1">
+</LinearLayout>
+
+</LinearLayout>-->

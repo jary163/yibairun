@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray4"
+    android:orientation="vertical" >
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15dp" >
+
+        <TextView
+            style="@style/NorMalGreyText_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mybank_trad_pasword" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_edit_balck"
+            android:gravity="center_vertical" >
+
+            <EditText
+                android:id="@+id/et_password"
+                style="@style/edit_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="@string/buys_input_password"
+                android:maxLines="1"
+                android:password="true" >
+            </EditText>
+        </LinearLayout>
+
+        <TextView
+            style="@style/NorMalGreyText_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/mybank_trad_pasword_again" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_edit_balck"
+            android:gravity="center_vertical" >
+
+            <EditText
+                android:id="@+id/et_password_again"
+                style="@style/edit_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="@string/buys_input_password_again"
+                android:maxLines="1"
+                android:password="true" >
+            </EditText>
+        </LinearLayout>
+
+        <TextView
+            style="@style/RegiestNextText"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/sel_regiest_next"
+            android:gravity="center"
+            android:paddingBottom="3dp"
+            android:text="@string/enter" />
+    </LinearLayout>
+
+</RelativeLayout><!-- From: file:/Users/cherish/Documents/yibairun/yibairun/res/layout/activity_add_bank_cards.xml -->

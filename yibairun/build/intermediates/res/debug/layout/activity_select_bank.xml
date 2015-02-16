@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray4"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp" >
+
+        <TextView
+            style="@style/MsgTimeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="@string/select_bank_types" />
+
+        <TextView
+            style="@style/MsgTimeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:text="@string/select_city" />
+
+        <TextView
+            style="@style/MsgTimeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="180dp"
+            android:maxLines="1"
+            android:text="@string/select_bank_numbs" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <ListView
+            android:id="@+id/lv_bank"
+            android:background="@color/white"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+        </ListView>
+
+        <include
+            android:id="@+id/pending_view"
+            layout="@layout/pending"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</LinearLayout><!-- From: file:/Users/cherish/Documents/yibairun/yibairun/res/layout/activity_select_bank.xml -->

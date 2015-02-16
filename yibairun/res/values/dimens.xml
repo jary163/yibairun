@@ -1,0 +1,14 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fragment_product_percent">40sp</dimen>
+
+
+    <dimen name="header_height">378dp</dimen>
+    <dimen name="min_header_height">330dp</dimen>
+    <!--<dimen name="header_height">298dp</dimen>
+    <dimen name="min_header_height">250dp</dimen>-->
+    <dimen name="header_logo_size">100dp</dimen>
+</resources>

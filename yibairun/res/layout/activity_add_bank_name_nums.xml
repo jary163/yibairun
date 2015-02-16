@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray4"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="5dp" >
+
+        <TextView
+            style="@style/BandingCardsInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/bank_band_person_info" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp" >
+
+            <TextView
+                style="@style/NorMalBigBlackText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="@string/bank_cards_owner" />
+
+            <ImageView
+                android:id="@+id/iv_username_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/ic_bank_owner_info" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                style="@style/BankUserNameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@id/iv_username_info"
+                android:text="张三毛" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/add_bank_line" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp" >
+
+            <TextView
+                android:id="@+id/tv_cardNum"
+                style="@style/NorMalBigBlackText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/rl_cardnum"
+                android:layout_alignParentLeft="true"
+                android:layout_marginBottom="10dp"
+                android:text="@string/bank_nums" />
+
+            <RelativeLayout
+                android:id="@+id/rl_cardnum"
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/tv_cardNum"
+                android:gravity="center_vertical" >
+
+                <EditText
+                    android:id="@+id/et_bank_cardnum"
+                    style="@style/edit_style"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/bank_input_nums"
+                    android:inputType="number"
+                    android:paddingLeft="2dp" >
+                </EditText>
+
+                <ImageView
+                    android:id="@+id/iv_clear_nums"
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignTop="@id/et_bank_cardnum"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/ic_clear"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/et_bank_cardnum"
+                    android:layout_marginRight="3dp"
+                    android:background="@drawable/bg_add_bank_line" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_next"
+            style="@style/RegiestNextText"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/sel_regiest_next"
+            android:enabled="false"
+            android:gravity="center"
+            android:paddingBottom="3dp"
+            android:paddingTop="3dp"
+            android:text="@string/ybr_next" />
+    </LinearLayout>
+
+</LinearLayout>

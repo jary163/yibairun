@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15dp" >
+
+        <TextView
+            android:id="@+id/tv_plan_info"
+            style="@style/NorMalBlackText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/iv_time"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/iv_time"
+            android:text="青岛喜来乐国际家居博贷款集合资金计划" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                style="@style/NorMalGreyText_two"
+                android:id="@+id/tv_limit_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:text="到期时间：2013-03-08" />
+
+            <TextView
+                style="@style/NorMalGreyText_two"
+                android:id="@+id/tv_normal_invest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="7dp"
+                android:text="状态：正常投资" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="7dp"
+            android:background="@color/gray9" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center_vertical" >
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/ic_rmb" />
+
+            <TextView
+                style="@style/NorMalGreyText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/person_current_income" />
+
+            <TextView
+                style="@style/Curren_Income"
+                android:id="@+id/tv_current_invest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:text="10000.00" />
+
+            <TextView
+                style="@style/Curren_Income_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="3dp"
+                android:text="元" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray9" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/NorMalGreyText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/person_year_income" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp" >
+
+                    <TextView
+                        style="@style/ProductDetailInfoStyleThree"
+                        android:id="@+id/tv_year_invest"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="9.41" />
+
+                    <TextView
+                        style="@style/ProductDetailInfoStyleThreeUnit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/NorMalGreyText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ybr_money" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp" >
+
+                    <TextView
+                        style="@style/ProductDetailInfoStyleThree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tv_balance"
+                        android:text="10000" />
+
+                    <TextView
+                        style="@style/ProductDetailInfoStyleThreeUnit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="元"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/NorMalGreyText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/buys_limits" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp" >
+
+                    <TextView
+                        style="@style/ProductDetailInfoStyleThree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tv_limit_time"
+                        android:text="365" />
+
+                    <TextView
+                        style="@style/ProductDetailInfoStyleThreeUnit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="天"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="5dp"
+        android:background="@color/gray10" />
+
+</LinearLayout>

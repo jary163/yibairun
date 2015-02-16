@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <ImageView
+        android:id="@+id/iv_close_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/ic_close" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp" >
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/product_detail_yield_count" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="30dp"
+                android:layout_weight="1"
+                android:background="@drawable/product_detail_yield_three"
+                android:gravity="center_vertical" >
+
+                <EditText
+                    android:id="@+id/chat_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:inputType="number"
+                    android:maxLines="3"
+                    android:minLines="1" >
+
+                    <requestFocus />
+                </EditText>
+
+                <ImageView
+                    android:id="@+id/iv_clear_date"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/ic_close_roud" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            android:paddingLeft="15dp" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center" >
+
+                <TextView
+                    style="@style/NorMalGreyText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="银行活期" />
+
+                <com.yibairun.ui.components.MySeekBar
+                    android:id="@+id/sb_bank"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:focusable="false"
+                    android:max="100"
+                    android:maxHeight="2dp"
+                    android:minHeight="2dp"
+                    android:padding="3dp"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/seekbar_style"
+                    android:thumb="@drawable/progress_circle"
+                    android:thumbOffset="0dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" >
+
+                    <TextView
+                        android:id="@+id/tv_income_bank"
+                        style="@style/NorMalRedText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="0" />
+
+                    <TextView
+                        style="@style/NorMalGreyText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="元" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center" >
+
+                <TextView
+                    style="@style/NorMalGreyText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="余额宝" />
+
+                <com.yibairun.ui.components.MySeekBar
+                    android:id="@+id/sb_zfb"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:focusable="false"
+                    android:max="100"
+                    android:maxHeight="2dp"
+                    android:minHeight="2dp"
+                    android:padding="3dp"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/seekbar_style"
+                    android:thumb="@drawable/progress_circle"
+                    android:thumbOffset="0dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" >
+
+                    <TextView
+                        android:id="@+id/tv_income_zfb"
+                        style="@style/NorMalRedText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="0" />
+
+                    <TextView
+                        style="@style/NorMalGreyText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="元" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center" >
+
+                <TextView
+                    style="@style/NorMalGreyText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="亿百润" />
+
+                <com.yibairun.ui.components.MySeekBar
+                    android:id="@+id/sb_yby"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:focusable="false"
+                    android:max="100"
+                    android:maxHeight="2dp"
+                    android:minHeight="2dp"
+                    android:padding="3dp"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/seekbar_style"
+                    android:thumb="@drawable/progress_circle"
+                    android:thumbOffset="0dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" >
+
+                    <TextView
+                        android:id="@+id/tv_income_yby"
+                        style="@style/NorMalRedText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="0" />
+
+                    <TextView
+                        style="@style/NorMalGreyText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="元" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center_horizontal" >
+
+            <TextView
+                android:id="@+id/tv_limite"
+                style="@style/NorMalGreyText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="理财期限" />
+
+            <ImageView
+                android:id="@+id/iv_calendar"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignBottom="@id/tv_limite"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_toRightOf="@id/tv_limite"
+                android:src="@drawable/calendar" />
+
+            <TextView
+                android:id="@+id/tv_buy_days"
+                style="@style/NorMalBigBlackText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/iv_calendar"
+                android:text="365" />
+
+            <TextView
+                style="@style/NorMalGreyText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tv_buy_days"
+                android:text="天" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout><!-- From: file:/Users/cherish/Documents/yibairun/yibairun/res/layout/dialog_product_calculate.xml -->

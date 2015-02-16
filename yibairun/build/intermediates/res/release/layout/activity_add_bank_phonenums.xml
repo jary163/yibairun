@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray4"
+    android:orientation="vertical"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingTop="5dp" >
+
+    <TextView
+        style="@style/BandingCardsInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/bank_band_type" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp" >
+
+        <TextView
+            style="@style/NorMalBigBlackText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="@string/card_type" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            style="@style/ProductDetailInfoStyleTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:text="招商银行  储蓄卡" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/add_bank_line" />
+
+    <TextView
+        style="@style/BandingCardsInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/bank_reserved_info" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp" >
+
+        <TextView
+            android:id="@+id/tv_phoneNum"
+            style="@style/NorMalBigBlackText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/rl_cardnum"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="10dp"
+            android:text="@string/bank_reserved_phone" />
+
+        <RelativeLayout
+            android:id="@+id/rl_cardnum"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/tv_phoneNum"
+            android:gravity="center_vertical" >
+
+            <EditText
+                android:id="@+id/et_bank_phonenum"
+                style="@style/edit_style"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/bank_reserved_nums_info"
+                android:inputType="number"
+                android:paddingLeft="2dp" >
+            </EditText>
+
+            <ImageView
+                android:id="@+id/iv_clear_nums"
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@id/et_bank_phonenum"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/ic_clear"
+                android:visibility="gone" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/et_bank_phonenum"
+                android:layout_marginRight="3dp"
+                android:background="@drawable/bg_add_bank_line" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal" >
+
+        <ImageView
+            android:id="@+id/iv_user_protocol"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/sel_regiest_protocol" />
+
+        <TextView
+            style="@style/NorMalGreyText_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="同意" />
+
+        <TextView
+            android:id="@+id/tv_protocol"
+            style="@style/RegiestProtocolText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:text="《用户协议》" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_next"
+        style="@style/RegiestNextText"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/sel_regiest_next"
+        android:enabled="false"
+        android:gravity="center"
+        android:paddingBottom="3dp"
+        android:paddingTop="3dp"
+        android:text="@string/ybr_next" />
+
+</LinearLayout><!-- From: file:/Users/cherish/Documents/yibairun/yibairun/res/layout/activity_add_bank_phonenums.xml -->

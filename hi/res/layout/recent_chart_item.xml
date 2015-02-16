@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+   <RelativeLayout
+        android:id="@+id/item_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:descendantFocusability="beforeDescendants"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="15dp" >
+
+        <cn.hi.eim.view.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/new_icon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="5dip"
+            android:layout_marginTop="8dip"
+            android:layout_weight="0"
+            android:background="@drawable/head_default_round"
+            app:border_color="#FFFFFFFF"
+            app:border_width="2dp" />
+
+        <TextView
+            android:id="@+id/new_title"
+            style="@style/chat_list_item_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/new_icon"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="3dp"
+            android:layout_toRightOf="@id/new_icon"
+            android:drawablePadding="5dp"
+            android:drawableRight="@drawable/k_chat"
+            android:maxLines="1"
+            android:maxWidth="120dip"
+            android:text="张三" />
+
+        <TextView
+            android:id="@+id/new_content"
+            style="@style/chat_list_item_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/new_icon"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@id/new_icon"
+            android:text="啦啦啦啦啦啦" />
+
+        <TextView
+            android:id="@+id/new_date"
+            style="@style/chat_list_item_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@id/new_title"
+            android:text="10:00" />
+
+        <TextView
+            android:id="@+id/paopao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/new_date"
+            android:background="@drawable/sc_message_box_bubble"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@color/black"
+            android:textSize="10.0dip"
+            android:visibility="gone"
+             />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/new_icon"
+            android:layout_marginTop="10dp"
+            android:background="@color/chat_send_msg" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/item_right"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@color/right_bg" >
+
+        <TextView
+            android:id="@+id/item_right_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:drawableLeft="@drawable/del_icon_normal"
+            android:gravity="center"
+            android:text="删除"
+            android:textColor="@color/blur_bg" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,41 @@
+package com.yibairun.ui.activity;
+
+import android.os.Bundle;
+import android.text.Html;
+import android.widget.TextView;
+
+import com.yibairun.R;
+import com.yibairun.bean.Message;
+import com.yibairun.comm.Constant;
+
+public class MessageDetailActivity extends BaseActivity {
+
+	private TextView tv_msg_info;
+	private Message message;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		setContentView(R.layout.activity_msg_detail);
+		super.onCreate(savedInstanceState);
+	}
+
+	@Override
+	public void initView() {
+		tv_msg_info = findView(R.id.tv_msg_info);
+	}
+
+	@Override
+	public void initDate() {
+
+		message = (Message) getIntent().getSerializableExtra(Constant.MESSAGE_DETAIL);
+		/*bar.setDisplayHomeAsUpEnabled(true);
+		bar.setTitle(getResources().getString(R.string.title_msg_detail));*/
+		tv_msg_info.setText(Html.fromHtml(message.getContent()));
+		//tv_msg_info.setText(message.getContent());
+	}
+
+	@Override
+	public void initListener() {
+	}
+
+}

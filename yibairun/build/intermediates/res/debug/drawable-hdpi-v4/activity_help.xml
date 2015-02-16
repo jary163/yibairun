@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/title"
+        layout="@layout/activity_basetitle" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/gray4"
+            android:orientation="vertical"
+            android:padding="15dp" >
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/tv_question1_num"
+                    style="@style/NorMalBigBlackText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1." />
+
+                <TextView
+                    android:id="@+id/tv_question1_info"
+                    style="@style/NorMalBigBlackText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_toRightOf="@id/tv_question1_num"
+                    android:text="@string/help_question1" />
+
+                <TextView
+                    style="@style/HelpAnswerText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_question1_info"
+                    android:layout_marginLeft="3dp"
+                    android:layout_toRightOf="@id/tv_question1_num"
+                    android:text="@string/help_answer1" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp" >
+
+                <TextView
+                    android:id="@+id/tv_question2_num"
+                    style="@style/NorMalBigBlackText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2." />
+
+                <TextView
+                    android:id="@+id/tv_question2_info"
+                    style="@style/NorMalBigBlackText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_toRightOf="@id/tv_question2_num"
+                    android:text="@string/help_question2" />
+
+                <TextView
+                    style="@style/HelpAnswerText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_question2_info"
+                    android:layout_marginLeft="3dp"
+                    android:layout_toRightOf="@id/tv_question2_num"
+                    android:text="@string/help_answer2" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp" >
+
+                <TextView
+                    android:id="@+id/tv_question3_num"
+                    style="@style/NorMalBigBlackText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3." />
+
+                <TextView
+                    android:id="@+id/tv_question3_info"
+                    style="@style/NorMalBigBlackText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_toRightOf="@id/tv_question3_num"
+                    android:text="@string/help_question3" />
+
+                <TextView
+                    style="@style/HelpAnswerText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_question3_info"
+                    android:layout_marginLeft="3dp"
+                    android:layout_toRightOf="@id/tv_question3_num"
+                    android:text="@string/help_answer3" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout><!-- From: file:/Users/cherish/Documents/yibairun/yibairun/res/drawable-hdpi/activity_help.xml -->

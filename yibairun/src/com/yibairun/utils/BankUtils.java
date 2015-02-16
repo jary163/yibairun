@@ -1,0 +1,83 @@
+package com.yibairun.utils;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.text.style.ImageSpan;
+import android.util.Log;
+
+public class BankUtils {
+
+	public static final Map<String,String> bankMap = new HashMap<String, String>();
+	
+	public  static Bitmap getBankIco(Context context,String name){
+		return FileUtil.getImageFromAssetsFile(context,"bankico/"+name+ ".png");
+	}
+	
+	public static String formatBankNum(String str){
+		String formatStr="**** **** **** ";
+		//System.out.println("length:"+formatStr.length());
+		if(str.length()!=16&&str.length()!=19){
+			return str;
+		}
+		if(str.length()==16){ 
+			formatStr = formatStr+str.substring(12,16);
+		}else if(str.length()==19){
+			formatStr = formatStr+str.substring(12,16)+" "+str.substring(16,19);
+		}
+		return formatStr;
+	}
+	
+	/**
+	 * 格式化电话号码
+	 * @param str
+	 * @return
+	 */
+	public static String formatMobileNum(String str,int start,int end){
+		String subString = str.substring(start, end);
+		return str.replace(subString, "****");
+	}
+	
+	/**
+	 * 获取收益率
+	 * @param rate
+	 * @param data
+	 * @return
+	 */
+	public static float getCalculateDate(float rate,int data,int inputMoney){
+		return DateUtil.getFormatNumber(data*inputMoney*rate/36500);
+	}
+	
+	static {
+		bankMap.put("北京银行", "bj");
+		bankMap.put("北京农村商业银行", "bjnc");
+		bankMap.put("渤海银行", "bohai");
+		bankMap.put("东亚银行", "dongya");
+		bankMap.put("工商银行", "gongshang");
+		bankMap.put("光大银行", "guangda");
+		bankMap.put("广发银行", "guangfa");
+		bankMap.put("广州银行", "guangzhou");
+		bankMap.put("杭州银行", "hangzhou");
+		bankMap.put("华夏银行", "huaxia");
+		bankMap.put("徽商银行", "huishang");
+		bankMap.put("建设银行", "jianshe");
+		bankMap.put("交通银行", "jiaotong");
+		bankMap.put("民生银行", "mingsheng");
+		bankMap.put("南京银行", "nanjing");
+		bankMap.put("宁波银行", "ningbo");
+		bankMap.put("上海农商银行", "nongshang");
+		bankMap.put("中国平安", "pingan");
+		bankMap.put("浦发银行", "pufa");
+		bankMap.put("上海银行", "shanghai");
+		bankMap.put("深圳发展银行", "szfz");
+		bankMap.put("兴业银行", "xinye");
+		bankMap.put("中国邮政", "youzheng");
+		bankMap.put("邮政储蓄银行", "yzcx");
+		bankMap.put("招商银行", "zhaoshang");
+		bankMap.put("浙商银行", "zheshang");
+		bankMap.put("中国银行", "zhongguo");
+		bankMap.put("中信银行", "zhongxing");
+	}
+}

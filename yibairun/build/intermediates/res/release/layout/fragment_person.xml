@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:psts="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tabs"
+            android:background="@color/red7"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp" >
+
+                <com.yibairun.ui.components.CircleImageView
+                    android:id="@+id/iv_head"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    app:border_color="@color/black"
+                    android:background="@drawable/person_head"
+                    app:border_width="2dp" />
+
+                <ImageView
+                    android:id="@+id/iv_person_msg"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_toRightOf="@id/iv_head"
+                    android:background="@drawable/person_msg" />
+
+                <ImageView
+                    android:id="@+id/iv_recharge"
+                    android:layout_width="60dp"
+                    android:layout_height="22dp"
+                    android:layout_alignBottom="@id/iv_head"
+                    android:layout_marginBottom="17dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/iv_person_msg"
+                    android:background="@drawable/person_pay" />
+
+                <TextView
+                    android:id="@+id/tv_number"
+                    style="@style/NumberText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/iv_head"
+                    android:layout_centerHorizontal="true"
+                    android:text="" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="25dp" >
+
+                <TextView
+                    style="@style/NorMalBlackText_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/iv_head"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/person_balance" />
+
+                <TextView
+                    android:id="@+id/tv_balance"
+                    style="@style/AccountMoneyText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:text="" />
+
+                <TextView
+                    style="@style/ProductDetailSmailYieldText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="元" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp" >
+
+                <TextView
+                    style="@style/NorMalBlackText_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/iv_head"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/person_income" />
+
+                <TextView
+                    android:id="@+id/tv_expected_return"
+                    style="@style/AccountMoneyText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:text="" />
+
+                <TextView
+                    style="@style/ProductDetailSmailYieldText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="元" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp" >
+
+                <TextView
+                    style="@style/NorMalBlackText_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/iv_head"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/person_invest" />
+
+                <TextView
+                    android:id="@+id/tv_investing"
+                    style="@style/AccountMoneyText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:text="" />
+
+                <TextView
+                    style="@style/ProductDetailSmailYieldText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="元" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:layout_marginTop="25dp" >
+
+                <LinearLayout
+                    android:id="@+id/ll_accrued_income"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/tv_accrued_income"
+                            style="@style/AccountMoneyText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="" />
+
+                        <TextView
+                            style="@style/ProductDetailSmailYieldText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="元" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/PersonAddIncome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/person_add_income" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_people_num"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center" >
+
+                    <LinearLayout
+                        android:id="@+id/ll_context"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical" >
+
+                        <LinearLayout
+                            android:id="@+id/ll_people_num"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" >
+
+                            <TextView
+                                android:id="@+id/tv_recommend_nums"
+                                style="@style/AccountMoneyText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="" />
+
+                            <TextView
+                                style="@style/ProductDetailSmailYieldText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="人" />
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/PersonAddIncome"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/ll_people_num"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/person_recommend_friend" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/ll_context"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignTop="@id/ll_context"
+                        android:background="@color/person_line" />
+
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/ll_context"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignTop="@id/ll_context"
+                        android:background="@color/person_line" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_accumulative_total"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/tv_accumulative_total"
+                            style="@style/AccountMoneyText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="" />
+
+                        <TextView
+                            style="@style/ProductDetailSmailYieldText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="元" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/PersonAddIncome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/person_invest_money" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.yibairun.ui.components.PagerSlidingTabStrip
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@color/white"
+
+
+            psts:pstsDividerColor="@android:color/transparent"
+            psts:pstsUnderlineHeight="1dp"
+            psts:pstsIndicatorHeight="2dp"
+            psts:pstsIndicatorColor="@color/pstsIndicatorColor"
+            psts:pstsSelectedTabTextColor="@color/pstsIndicatorColor"
+            psts:pstsTabBackground="@android:color/transparent"
+            android:textSize="16sp"/>
+    </LinearLayout>
+
+    <include
+        android:id="@+id/login_view"
+        layout="@layout/empty_login"
+        android:visibility="gone" />
+    <include
+        android:id="@+id/pending_view"
+        layout="@layout/pending"
+        android:visibility="gone" />
+</FrameLayout><!-- From: file:/Users/cherish/Documents/yibairun/yibairun/res/layout/fragment_person.xml -->

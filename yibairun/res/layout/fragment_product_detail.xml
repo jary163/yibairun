@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:obd="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center" >
+
+    <ScrollView android:layout_height="fill_parent"
+        android:fillViewport="true"
+        android:layout_width="fill_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/gray2"
+                android:padding="8dp" >
+
+                <ImageView
+                    android:id="@+id/iv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/product_22" />
+
+                <TextView
+                    android:id="@+id/tv_plan_info"
+                    style="@style/NorMalBlackText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/iv_time"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/iv_time"
+                    android:text="(1000万元)青岛喜来乐国际家居博贷款集合资金合资金合资金计划" />
+
+                <TextView
+                    android:id="@+id/tv_buys_limit"
+                    style="@style/ProductDetailInfoStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/tv_plan_info"
+                    android:layout_marginRight="5dp"
+                    android:text="100元起购" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp" >
+
+                <TextView
+                    android:id="@+id/tv_product_total"
+                    style="@style/ProductDetailBigNumbertyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1000" />
+
+                <TextView
+                    android:id="@+id/tv_product_total_unit"
+                    style="@style/ProductDetailInfoStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="万" />
+            </LinearLayout>
+
+            <com.yibairun.ui.components.WaterViewGroupEx
+                android:id="@+id/vg_waterView"
+                android:layout_width="230dp"
+                android:layout_height="230dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="9dp"
+                obd:background_color="#00000000"
+                obd:src="@drawable/icon_drive_analyse_circle"
+                obd:stroke_width="11"
+                obd:type_draw="arc" >
+
+                <LinearLayout
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp" >
+
+                        <TextView
+                            android:id="@+id/tv_circle_total_money"
+                            style="@style/ProductDetailMoreBigNumbertyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="9999999" />
+
+                        <TextView
+                            style="@style/ProductDetailInfoStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="元" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/NorMalRedText_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="当前总计" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp" >
+
+                        <TextView
+                            android:id="@+id/tv_circle_total_people"
+                            style="@style/ProductDetailMoreBigNumbertyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="50" />
+
+                        <TextView
+                            style="@style/ProductDetailInfoStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="人购买" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.yibairun.ui.components.WaterViewGroupEx>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:padding="10dp" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true" >
+
+                    <TextView
+                        style="@style/NorMalRedText_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="投资期限：" />
+
+                    <TextView
+                        android:id="@+id/tv_limit_day"
+                        style="@style/NorMalRedText_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="365" />
+
+                    <TextView
+                        android:id="@+id/tv_limit_day_unit"
+                        style="@style/NorMalRedText_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="天" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true" >
+
+                    <TextView
+                        style="@style/NorMalRedText_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="剩余时间：" />
+
+                    <TextView
+                        android:id="@+id/tv_overplus_days"
+                        style="@style/NorMalRedText_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="30" />
+
+                    <TextView
+                        android:id="@+id/tv_outof_day_unit"
+                        style="@style/NorMalRedText_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="天" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@color/red2" />
+
+            <TextView
+                style="@style/NorMalRedText_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:text="年化收益" />
+
+            <TextView
+                android:id="@+id/tv_year_income"
+                style="@style/ProductDetailMoreBigNumbertyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="12.2-11.6%"
+                android:textSize="35sp" >
+            </TextView>
+
+            <TextView
+                style="@style/NorMalRedText_three"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:text="（类型：基础设施      风险度：低）" />
+            <View android:layout_height="0dp"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"/>
+
+            <LinearLayout
+                android:id="@+id/ll_enter"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="15dp"
+                android:background="@color/red4"
+                android:gravity="center" >
+
+                <ImageView
+                    android:id="@+id/iv_product_buys"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/set_product_btn" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray4"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="5dp" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_edit_balck"
+            android:gravity="center_vertical" >
+
+            <EditText
+                android:id="@+id/et_regiest_username"
+                style="@style/edit_style"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/login_nunber"
+                android:inputType="numberSigned">
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_edit_balck"
+            android:gravity="center_vertical" >
+
+            <EditText
+                android:id="@+id/et_regiest_password"
+                style="@style/edit_password_style"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/login_password"
+                android:maxLines="1">
+            </EditText>
+        </LinearLayout>
+
+        <TextView
+            style="@style/NorMalGreyText_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/regiest_password_limit" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="20dp" >
+
+            <ImageView
+                android:id="@+id/iv_protocol"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/sel_regiest_protocol" />
+
+            <TextView
+                style="@style/NorMalGreyText_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="@string/regiest_agree" />
+
+            <TextView
+                android:id="@+id/tv_protocol"
+                style="@style/RegiestProtocolText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="@string/regiest_protocol" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_next"
+            style="@style/RegiestNextText"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/sel_regiest_next"
+            android:enabled="false"
+            android:gravity="center"
+            android:paddingBottom="3dp"
+            android:paddingTop="3dp"
+            android:text="@string/ybr_next" />
+    </LinearLayout>
+
+</LinearLayout>

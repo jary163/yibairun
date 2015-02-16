@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray4"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="20dp" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center" >
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/success" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/NorMalBigBlackText"
+                android:text="@string/buys_success"
+                android:layout_marginLeft="10dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_next"
+            style="@style/ProductDetailYieldText"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="30dp"
+			android:background="@drawable/bg_edit_red"            
+            android:gravity="center"
+            android:paddingBottom="3dp"
+            android:textColor="@color/white"
+            android:paddingTop="3dp"
+            android:text="@string/enter" />
+    </LinearLayout>
+
+</LinearLayout>

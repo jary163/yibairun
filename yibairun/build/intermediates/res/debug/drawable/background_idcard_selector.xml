@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/bg_before_tack_pic" android:state_selected="false"/>
+    <item android:drawable="@drawable/bg_after_tack_pic" android:state_selected="true"/>
+<item android:drawable="@drawable/bg_after_tack_pic" android:state_pressed="true"/>
+</selector><!-- From: file:/Users/cherish/Documents/yibairun/yibairun/res/drawable/background_idcard_selector.xml -->

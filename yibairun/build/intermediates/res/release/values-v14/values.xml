@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/cherish/Documents/yibairun/yibairun/res/values-v14/styles.xml -->
+    <eat-comment/>
+    <style name="AboutWebsite">
+        <item name="android:textColor">@color/website_blue</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+    <style name="AccountMoneyText">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="AppBaseTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+
+        <!-- API 14 theme customizations can go here. -->
+        <item name="android:actionBarStyle">@style/YiBaiRunActionBar</item>
+        <item name="android:itemBackground">@drawable/actionbar_bg_selector</item>
+        <item name="android:actionBarItemBackground">@drawable/actionbar_bg_selector</item>
+        <item name="android:itemTextAppearance">@style/YiBaiRunActionBarOverflow</item>
+        <item name="android:actionOverflowButtonStyle">@style/YiBaiRunActionButtonOverflow</item>
+        <item name="android:actionBarTabTextStyle">@style/YiBaiRunActionBarTabText</item>
+    </style>
+    <style name="AuthcodeAgainText">
+        <item name="android:textColor">@color/gray7</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:enabled">false</item>
+    </style>
+    <style name="AuthorityText">
+        <item name="android:textColor">@color/gray5</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="BandingCardsInfo">
+        <item name="android:textColor">@color/gray6</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="BankAddInfo">
+        <item name="android:textColor">@color/black_add_bank</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+    <style name="BankNameText">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="BankUserNameText">
+        <item name="android:textColor">@color/gray6</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="CardsText">
+        <item name="android:textColor">@color/gray5</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+    <style name="Curren_Income">
+        <item name="android:textColor">@color/blue2</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+    <style name="Curren_Income_unit">
+        <item name="android:textColor">@color/blue2</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="HelpAnswerText">
+        <item name="android:textColor">@color/gray5</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">3sp</item>        
+    </style>
+    <style name="Money_Text">
+        <item name="android:textColor">@color/red8</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="Money_Text_Unit">
+        <item name="android:textColor">@color/red8</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+    <style name="MsgTimeText">
+        <item name="android:textColor">@color/gray5</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+    <style name="NorMalBigBlackText">
+        <item name="android:textColor">@color/black3</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="NorMalBlackText">
+        <item name="android:textColor">@color/black3</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="NorMalBlackText_one">
+        <item name="android:textColor">@color/black3</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="NorMalGreyText">
+        <item name="android:textColor">@color/gray5</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+    <style name="NorMalGreyText_one">
+        <item name="android:textColor">@color/gray5</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+    <style name="NorMalGreyText_two">
+        <item name="android:textColor">@color/gray6</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="NorMalRedText">
+        <item name="android:textColor">@color/red6</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="NorMalRedText_one">
+        <item name="android:textColor">@color/red3</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="NorMalRedText_three">
+        <item name="android:textColor">@color/red3</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="NorMalRedText_two">
+        <item name="android:textColor">@color/red3</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="NorMalWhiteText">
+        <item name="android:textColor">@color/white3</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="NumberStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">5dp</item>
+    </style>
+    <style name="NumberText">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+    <style name="NumberTextTwo">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="PerentStyle">
+        <item name="android:textColor">@color/white4</item>
+        <item name="android:textSize">27sp</item>
+    </style>
+    <style name="PersonAddIncome">
+        <item name="android:textColor">@color/black3</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="ProductDayText">
+        <item name="android:textColor">@color/white3</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="ProductDetailBigNumbertyle">
+        <item name="android:textColor">@color/red3</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+    <style name="ProductDetailInfoStyle">
+        <item name="android:textColor">@color/red3</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="ProductDetailInfoStyleOne">
+        <item name="android:textColor">@color/red6</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="ProductDetailInfoStyleThree">
+        <item name="android:textColor">@color/red3</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+    <style name="ProductDetailInfoStyleThreeUnit">
+        <item name="android:textColor">@color/red3</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+    <style name="ProductDetailInfoStyleTwo">
+        <item name="android:textColor">@color/red3</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="ProductDetailMoreBigNumbertyle">
+        <item name="android:textColor">@color/red3</item>
+        <item name="android:textSize">32sp</item>
+    </style>
+    <style name="ProductDetailSmailYieldText">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="ProductDetailYield">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">32sp</item>
+    </style>
+    <style name="ProductDetailYieldText">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+    <style name="RecommendText">
+        <item name="android:textColor">@color/gray5</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+    <style name="RegiestNextText">
+        <item name="android:textColor">@color/gray7</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:enabled">false</item>
+    </style>
+    <style name="RegiestProtocolText">
+        <item name="android:textColor">@color/blue1</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="SettingAboutText">
+        <item name="android:textColor">@color/black3</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+    <style name="Setting_Item">
+        <item name="android:textColor">@color/black3</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:padding">25dp</item>
+        <item name="android:background">@color/gray15</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="Setting_System">
+        <item name="android:textColor">@color/black3</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:padding">25dp</item>
+        <item name="android:background">@color/gray4</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="ToastText">
+        <item name="android:textColor">@color/gray1</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="YiBaiRunActionBar" parent="@android:style/Widget.Holo.ActionBar">
+        <item name="android:background">#303537</item>
+        <item name="android:titleTextStyle">@style/YiBaiRunActionBarTitleText</item>
+    </style>
+    <style name="YiBaiRunActionBarOverflow" parent="@android:style/Widget.ActionButton.Overflow">
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="YiBaiRunActionBarTabText" parent="@android:style/Widget.Holo.ActionBar.TabText">
+        <item name="android:textColor">#333</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="YiBaiRunActionBarTitleText" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">#cfcfcf</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="YiBaiRunActionButtonOverflow" parent="android:style/Widget.Holo.ActionButton.Overflow">
+        <item name="android:src">@drawable/actionbar_more_icon</item>
+    </style>
+    <style name="bank_card_nums">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">25sp</item>
+    </style>
+    <style name="edit_password_style">
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:textColorHint">@color/thingray</item>
+        <item name="android:textColor">@color/black2</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:background">@null</item>
+        <item name="android:password">true</item>
+        <item name="android:maxLines">1</item>
+    </style>
+    <style name="edit_style">
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:textColorHint">@color/thingray</item>
+        <item name="android:textColor">@color/black2</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:background">@null</item>
+        <item name="android:inputType">numberSigned</item>
+        <item name="android:maxLines">1</item>
+    </style>
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tv_payment_default"
+        style="@style/Setting_Item"
+        android:text="@string/bank_user_default" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/gray16" />
+
+    <TextView
+        android:id="@+id/tv_remove_binding"
+        style="@style/Setting_Item"
+        android:text="@string/bank_remove_binding" />
+
+</LinearLayout><!-- From: file:/Users/cherish/Documents/yibairun/yibairun/res/layout/activity_my_bank_option.xml -->

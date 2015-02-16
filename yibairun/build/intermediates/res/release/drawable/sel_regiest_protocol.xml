@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/ic_regiest_protocol_unselect" android:state_selected="false" />
+    <item android:drawable="@drawable/ic_regiest_protocol_select" android:state_selected="true" />
+
+</selector><!-- From: file:/Users/cherish/Documents/yibairun/yibairun/res/drawable/sel_regiest_protocol.xml -->

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/main_bg"
+    android:gravity="center" >
+
+    <ImageView
+        android:id="@+id/iv_goto_login"
+        android:layout_width="fill_parent"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_height="40dp"
+        android:background="@drawable/bg_login"
+        android:paddingBottom="3dp"
+        android:paddingTop="3dp" />
+
+</RelativeLayout>

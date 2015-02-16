@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="17dp"
+    android:paddingRight="8dp"
+    android:paddingTop="15dp" >
+
+    <TextView
+        android:id="@+id/tv_risk_control_nums"
+        style="@style/ProductDetailSmailYieldText"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:background="@drawable/bg_nums"
+        android:gravity="center"
+        android:text="1" />
+
+    <TextView
+        android:id="@+id/tv_risk_control_content"
+        style="@style/NorMalGreyText_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:text="@string/explain_control_risk_info1" />
+
+</LinearLayout><!-- From: file:/Users/cherish/Documents/yibairun/yibairun/res/layout/fragment_product_explain_item.xml -->
